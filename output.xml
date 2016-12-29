@@ -1,30 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20161229 21:56:19.391" generator="Robot 3.0 (Python 2.7.10 on darwin)">
+<robot generated="20161230 00:45:15.977" generator="Robot 3.0 (Python 2.7.10 on darwin)">
 <suite source="/Users/ripzery/PycharmProjects/download_unsplash/DownloadImage.robot" id="s1" name="DownloadImage">
-<test id="s1-t1" name="[1] Download Image From Unsplash">
-<kw type="setup" name="Setup Unsplash" library="DownloadImage">
+<test id="s1-t1" name="[2] Download Image From Soccersuck Xcorner">
+<kw type="setup" name="Setup Soccersuck" library="DownloadImage">
+<msg timestamp="20161230 00:45:16.422" level="TRACE">Arguments: [  ]</msg>
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>${UNSPLASH_URL}</arg>
+<arg>${SOCCERSUCK_URL}</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20161229 21:56:19.736" level="INFO">Opening browser 'chrome' to base url 'https://unsplash.com/?grid=single'</msg>
-<status status="PASS" endtime="20161229 21:56:29.483" starttime="20161229 21:56:19.735"></status>
+<msg timestamp="20161230 00:45:16.423" level="TRACE">Arguments: [ 'http://www.soccersuck.com' | 'chrome' ]</msg>
+<msg timestamp="20161230 00:45:16.423" level="INFO">Opening browser 'chrome' to base url 'http://www.soccersuck.com'</msg>
+<msg timestamp="20161230 00:45:17.450" level="DEBUG">POST http://127.0.0.1:53593/session {"requiredCapabilities": {}, "desiredCapabilities": {"platform": "ANY", "browserName": "chrome", "version": "", "chromeOptions": {"args": [], "extensions": []}, "javascriptEnabled": true}}</msg>
+<msg timestamp="20161230 00:45:18.626" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:18.627" level="DEBUG">POST http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/timeouts/async_script {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "ms": 5000.0}</msg>
+<msg timestamp="20161230 00:45:18.628" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:18.629" level="DEBUG">POST http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/timeouts/implicit_wait {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "ms": 0.0}</msg>
+<msg timestamp="20161230 00:45:18.630" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:18.630" level="DEBUG">POST http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/url {"url": "http://www.soccersuck.com", "sessionId": "222441636e1ebcff8573d2bcdaddd840"}</msg>
+<msg timestamp="20161230 00:45:27.868" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:27.869" level="DEBUG">Opened browser with session id 222441636e1ebcff8573d2bcdaddd840</msg>
+<msg timestamp="20161230 00:45:27.871" level="TRACE">Return: 1</msg>
+<status status="PASS" endtime="20161230 00:45:27.871" starttime="20161230 00:45:16.422"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:29.485" starttime="20161229 21:56:19.735"></status>
+<msg timestamp="20161230 00:45:27.873" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:27.874" starttime="20161230 00:45:16.422"></status>
 </kw>
-<kw name="Given Unsplash has images" library="Unsplash">
-<kw name="Get Matching Xpath Count" library="Selenium2Library">
-<doc>Returns number of elements matching `xpath`</doc>
+<kw name="Given Soccersuck Has Xcorner Section" library="Soccersuck">
+<msg timestamp="20161230 00:45:27.878" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
 <arguments>
-<arg>//*[@id="gridSingle"]/div/a</arg>
+<arg>xpath=//*[@id="container"]/div[2]/div[32]/div[3]/div[1]/a</arg>
+</arguments>
+<msg timestamp="20161230 00:45:27.878" level="TRACE">Arguments: [ 'xpath=//*[@id="container"]/div[2]/div[32]/div[3]/div[1]/a' ]</msg>
+<msg timestamp="20161230 00:45:27.880" level="DEBUG">POST http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/elements {"using": "xpath", "sessionId": "222441636e1ebcff8573d2bcdaddd840", "value": "//*[@id=\"container\"]/div[2]/div[32]/div[3]/div[1]/a"}</msg>
+<msg timestamp="20161230 00:45:27.916" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:27.916" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.6795129876713217-1/displayed {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "id": "0.6795129876713217-1"}</msg>
+<msg timestamp="20161230 00:45:27.944" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:27.944" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:27.944" starttime="20161230 00:45:27.878"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>xpath=//*[@id="container"]/div[2]/div[32]/div[3]/div[1]/a@href</arg>
+</arguments>
+<assign>
+<var>${x_corner_url}</var>
+</assign>
+<msg timestamp="20161230 00:45:27.946" level="TRACE">Arguments: [ 'xpath=//*[@id="container"]/div[2]/div[32]/div[3]/div[1]/a@href' ]</msg>
+<msg timestamp="20161230 00:45:27.947" level="DEBUG">POST http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/elements {"using": "xpath", "sessionId": "222441636e1ebcff8573d2bcdaddd840", "value": "//*[@id=\"container\"]/div[2]/div[32]/div[3]/div[1]/a"}</msg>
+<msg timestamp="20161230 00:45:27.974" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:27.974" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.6795129876713217-1/attribute/href {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "href", "id": "0.6795129876713217-1"}</msg>
+<msg timestamp="20161230 00:45:27.989" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:27.990" level="TRACE">Return: 'http://www.soccersuck.com/boards/topic/1451145'</msg>
+<msg timestamp="20161230 00:45:27.990" level="INFO">${x_corner_url} = http://www.soccersuck.com/boards/topic/1451145</msg>
+<status status="PASS" endtime="20161230 00:45:27.990" starttime="20161230 00:45:27.945"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${test_x_corner_url}</arg>
+<arg>${x_corner_url}</arg>
+</arguments>
+<msg timestamp="20161230 00:45:27.991" level="TRACE">Arguments: [ '${test_x_corner_url}' | '${x_corner_url}' ]</msg>
+<msg timestamp="20161230 00:45:27.993" level="INFO">${test_x_corner_url} = http://www.soccersuck.com/boards/topic/1451145</msg>
+<msg timestamp="20161230 00:45:27.993" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:27.993" starttime="20161230 00:45:27.991"></status>
+</kw>
+<msg timestamp="20161230 00:45:27.993" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:27.993" starttime="20161230 00:45:27.877"></status>
+</kw>
+<kw name="When Enter Xcorner Url '${test_xcorner_url}'" library="Soccersuck">
+<msg timestamp="20161230 00:45:27.994" level="TRACE">Arguments: [ ${xcorner_url}='http://www.soccersuck.com/boards/topic/1451145' ]</msg>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${xcorner_url}</arg>
+</arguments>
+<msg timestamp="20161230 00:45:27.996" level="TRACE">Arguments: [ 'http://www.soccersuck.com/boards/topic/1451145' ]</msg>
+<msg timestamp="20161230 00:45:27.996" level="INFO">Opening url 'http://www.soccersuck.com/boards/topic/1451145'</msg>
+<msg timestamp="20161230 00:45:27.997" level="DEBUG">POST http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/url {"url": "http://www.soccersuck.com/boards/topic/1451145", "sessionId": "222441636e1ebcff8573d2bcdaddd840"}</msg>
+<msg timestamp="20161230 00:45:38.303" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:38.303" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:38.304" starttime="20161230 00:45:27.995"></status>
+</kw>
+<kw name="Get Webelements" library="Selenium2Library">
+<doc>Returns list of WebElement objects matching locator.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]//img</arg>
+</arguments>
+<assign>
+<var>@{list_images}</var>
+</assign>
+<msg timestamp="20161230 00:45:38.304" level="TRACE">Arguments: [ '//*[@id="container"]/div[6]/div[2]/div[2]//img' ]</msg>
+<msg timestamp="20161230 00:45:38.304" level="DEBUG">POST http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/elements {"using": "xpath", "sessionId": "222441636e1ebcff8573d2bcdaddd840", "value": "//*[@id=\"container\"]/div[6]/div[2]/div[2]//img"}</msg>
+<msg timestamp="20161230 00:45:38.322" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:38.323" level="TRACE">Return: [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;]</msg>
+<msg timestamp="20161230 00:45:38.324" level="INFO">@{list_images} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636...</msg>
+<status status="PASS" endtime="20161230 00:45:38.325" starttime="20161230 00:45:38.304"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${list_images}</arg>
 </arguments>
 <assign>
 <var>${total_image}</var>
 </assign>
-<msg timestamp="20161229 21:56:29.519" level="INFO">${total_image} = 10</msg>
-<status status="PASS" endtime="20161229 21:56:29.519" starttime="20161229 21:56:29.489"></status>
+<msg timestamp="20161230 00:45:38.325" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] ]</msg>
+<msg timestamp="20161230 00:45:38.326" level="INFO">Length is 13</msg>
+<msg timestamp="20161230 00:45:38.326" level="TRACE">Return: 13</msg>
+<msg timestamp="20161230 00:45:38.326" level="INFO">${total_image} = 13</msg>
+<status status="PASS" endtime="20161230 00:45:38.326" starttime="20161230 00:45:38.325"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -32,22 +146,52 @@
 <arg>${test_total_image}</arg>
 <arg>${total_image}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:29.521" level="INFO">${test_total_image} = 10</msg>
-<status status="PASS" endtime="20161229 21:56:29.521" starttime="20161229 21:56:29.519"></status>
+<msg timestamp="20161230 00:45:38.326" level="TRACE">Arguments: [ '${test_total_image}' | '${total_image}' ]</msg>
+<msg timestamp="20161230 00:45:38.327" level="INFO">${test_total_image} = 13</msg>
+<msg timestamp="20161230 00:45:38.327" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:38.327" starttime="20161230 00:45:38.326"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:29.521" starttime="20161229 21:56:29.488"></status>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${test_list_images}</arg>
+<arg>${list_images}</arg>
+</arguments>
+<msg timestamp="20161230 00:45:38.328" level="TRACE">Arguments: [ '${test_list_images}' | '${list_images}' ]</msg>
+<msg timestamp="20161230 00:45:38.329" level="INFO">${test_list_images} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1...</msg>
+<msg timestamp="20161230 00:45:38.329" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:38.329" starttime="20161230 00:45:38.328"></status>
+</kw>
+<msg timestamp="20161230 00:45:38.329" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:38.329" starttime="20161230 00:45:27.994"></status>
 </kw>
 <kw name="And Create Folder From Window Title" library="DownloadImage">
+<msg timestamp="20161230 00:45:38.330" level="TRACE">Arguments: [  ]</msg>
 <kw name="Get Folder Name From Window Title" library="DownloadImage">
+<msg timestamp="20161230 00:45:38.330" level="TRACE">Arguments: [  ]</msg>
 <kw name="Get Window Titles" library="Selenium2Library">
 <doc>Returns and logs titles of all windows known to the browser.</doc>
 <assign>
 <var>@{title}</var>
 </assign>
-<msg timestamp="20161229 21:56:29.536" level="INFO">Altogether 1 item.
-1: Unsplash | Free High-Resolution Photos</msg>
-<msg timestamp="20161229 21:56:29.537" level="INFO">@{title} = [ Unsplash | Free High-Resolution Photos ]</msg>
-<status status="PASS" endtime="20161229 21:56:29.537" starttime="20161229 21:56:29.522"></status>
+<msg timestamp="20161230 00:45:38.330" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20161230 00:45:38.331" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/window_handle {"sessionId": "222441636e1ebcff8573d2bcdaddd840"}</msg>
+<msg timestamp="20161230 00:45:38.332" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:38.332" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/window_handles {"sessionId": "222441636e1ebcff8573d2bcdaddd840"}</msg>
+<msg timestamp="20161230 00:45:38.334" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:38.335" level="DEBUG">POST http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/window {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "CDwindow-592334a9-f926-4437-843e-dc8b8667150a"}</msg>
+<msg timestamp="20161230 00:45:38.336" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:38.337" level="DEBUG">POST http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/execute {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "args": [], "script": "return [ window.id, window.name, document.title, document.URL ];"}</msg>
+<msg timestamp="20161230 00:45:38.342" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:38.342" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/window_handle {"sessionId": "222441636e1ebcff8573d2bcdaddd840"}</msg>
+<msg timestamp="20161230 00:45:38.343" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:38.343" level="DEBUG">POST http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/window {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "CDwindow-592334a9-f926-4437-843e-dc8b8667150a"}</msg>
+<msg timestamp="20161230 00:45:38.346" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:38.346" level="INFO">Altogether 1 item.
+1: น้องแยม ใสใส #CupE</msg>
+<msg timestamp="20161230 00:45:38.346" level="TRACE">Return: ['\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE']</msg>
+<msg timestamp="20161230 00:45:38.348" level="INFO">@{title} = [ น้องแยม ใสใส #CupE ]</msg>
+<status status="PASS" endtime="20161230 00:45:38.348" starttime="20161230 00:45:38.330"></status>
 </kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
@@ -58,8 +202,10 @@
 <assign>
 <var>${title}</var>
 </assign>
-<msg timestamp="20161229 21:56:29.537" level="INFO">${title} = Unsplash | Free High-Resolution Photos</msg>
-<status status="PASS" endtime="20161229 21:56:29.537" starttime="20161229 21:56:29.537"></status>
+<msg timestamp="20161230 00:45:38.348" level="TRACE">Arguments: [ ['\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE'] | '0' ]</msg>
+<msg timestamp="20161230 00:45:38.348" level="TRACE">Return: '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE'</msg>
+<msg timestamp="20161230 00:45:38.349" level="INFO">${title} = น้องแยม ใสใส #CupE</msg>
+<status status="PASS" endtime="20161230 00:45:38.349" starttime="20161230 00:45:38.348"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -67,483 +213,1303 @@
 <arg>${test_title}</arg>
 <arg>${title}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:29.539" level="INFO">${test_title} = Unsplash | Free High-Resolution Photos</msg>
-<status status="PASS" endtime="20161229 21:56:29.539" starttime="20161229 21:56:29.538"></status>
+<msg timestamp="20161230 00:45:38.349" level="TRACE">Arguments: [ '${test_title}' | '${title}' ]</msg>
+<msg timestamp="20161230 00:45:38.350" level="INFO">${test_title} = น้องแยม ใสใส #CupE</msg>
+<msg timestamp="20161230 00:45:38.350" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:38.350" starttime="20161230 00:45:38.349"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:29.539" starttime="20161229 21:56:29.522"></status>
+<msg timestamp="20161230 00:45:38.350" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:38.350" starttime="20161230 00:45:38.330"></status>
 </kw>
 <kw name="Create Folder" library="lib">
 <arguments>
 <arg>${test_title}</arg>
 </arguments>
-<status status="PASS" endtime="20161229 21:56:29.540" starttime="20161229 21:56:29.540"></status>
+<msg timestamp="20161230 00:45:38.351" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
+<msg timestamp="20161230 00:45:38.351" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:38.351" starttime="20161230 00:45:38.350"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:29.540" starttime="20161229 21:56:29.521"></status>
+<msg timestamp="20161230 00:45:38.351" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:38.351" starttime="20161230 00:45:38.329"></status>
 </kw>
-<kw name="Then Download image from unsplash '${test_total_image}' image" library="Unsplash">
-<kw type="for" name="${count} IN RANGE [ 1 | ${total} ]">
-<kw type="foritem" name="${count} = 1">
-<kw name="Get Element Attribute" library="Selenium2Library">
-<doc>Return value of element attribute.</doc>
-<arguments>
-<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
-</arguments>
-<assign>
-<var>${attr}</var>
-</assign>
-<msg timestamp="20161229 21:56:29.580" level="INFO">${attr} = background-image: url("https://images.unsplash.com/reserve/Ceszw9OoQD6rwMhfDl9R_render0006.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
-<status status="PASS" endtime="20161229 21:56:29.580" starttime="20161229 21:56:29.544"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${attr}</arg>
-<arg>"</arg>
-</arguments>
-<assign>
-<var>@{urls}</var>
-</assign>
-<msg timestamp="20161229 21:56:29.581" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/reserve/Ceszw9OoQD6rwMhfDl9R_render0006.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 6...</msg>
-<status status="PASS" endtime="20161229 21:56:29.581" starttime="20161229 21:56:29.581"></status>
-</kw>
+<kw name="Then Download All Images From The Poster Total '${test_total_image}'" library="Soccersuck">
+<msg timestamp="20161230 00:45:38.352" level="TRACE">Arguments: [ ${total_image}=13 ]</msg>
+<kw type="for" name="${count} IN RANGE [ 0 | ${total_image} ]">
+<kw type="foritem" name="${count} = 0">
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
 <arguments>
-<arg>${urls}</arg>
-<arg>1</arg>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:38.356" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 0 ]</msg>
+<msg timestamp="20161230 00:45:38.357" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;</msg>
+<msg timestamp="20161230 00:45:38.357" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:38.357" starttime="20161230 00:45:38.356"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
 </arguments>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20161229 21:56:29.582" level="INFO">${url} = https://images.unsplash.com/reserve/Ceszw9OoQD6rwMhfDl9R_render0006.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
-<status status="PASS" endtime="20161229 21:56:29.582" starttime="20161229 21:56:29.581"></status>
+<msg timestamp="20161230 00:45:38.358" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-1/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-1"}</msg>
+<msg timestamp="20161230 00:45:38.369" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:38.369" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781820_1139701056135324_6959506135971546362_n.jpg?oh=55f84cae4aedb8a03e68dd567a9174a7&amp;oe=58DE1CAA' ]</msg>
+<msg timestamp="20161230 00:45:38.369" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781820_1139701056135324_6959506135971546362_n.jpg?oh=55f84cae4aedb8a03e68dd567a9174a7&amp;oe=58DE1CAA'</msg>
+<msg timestamp="20161230 00:45:38.370" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781820_1139701056135324_6959506135971546362_n.jpg?oh=55f84cae4aedb8a03e68dd567a9174a7&amp;oe=58DE1CAA</msg>
+<status status="PASS" endtime="20161230 00:45:38.370" starttime="20161230 00:45:38.357"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:38.370" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781820_1139701056135324_6959506135971546362_n.jpg?oh=55f84cae4aedb8a03e68dd567a9174a7&amp;oe=58DE1CAA' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:38.371" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:38.371" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:38.371" starttime="20161230 00:45:38.370"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:38.371" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:38.371" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:38.372" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:38.372" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:38.372" starttime="20161230 00:45:38.371"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:38.375" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:38.377" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:38.377" starttime="20161230 00:45:38.372"></status>
 </kw>
 <kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:38.379" level="TRACE">Arguments: [ ${number}=0 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781820_1139701056135324_6959506135971546362_n.jpg?oh=55f84cae4aedb8a03e68dd567a9174a7&amp;oe=58DE1CAA' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
 <kw name="Download Img" library="lib">
 <arguments>
 <arg>${folder}</arg>
 <arg>${url}</arg>
 <arg>${number}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:29.618" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
-<status status="PASS" endtime="20161229 21:56:30.330" starttime="20161229 21:56:29.583"></status>
+<msg timestamp="20161230 00:45:38.380" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781820_1139701056135324_6959506135971546362_n.jpg?oh=55f84cae4aedb8a03e68dd567a9174a7&amp;oe=58DE1CAA' | 0 ]</msg>
+<msg timestamp="20161230 00:45:38.406" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:38.836" level="DEBUG">"GET /v/t1.0-9/15781820_1139701056135324_6959506135971546362_n.jpg?oh=55f84cae4aedb8a03e68dd567a9174a7&amp;oe=58DE1CAA HTTP/1.1" 200 67364</msg>
+<msg timestamp="20161230 00:45:39.127" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:39.127" starttime="20161230 00:45:38.379"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:30.330" starttime="20161229 21:56:29.582"></status>
+<msg timestamp="20161230 00:45:39.127" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:39.127" starttime="20161230 00:45:38.378"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:30.330" starttime="20161229 21:56:29.543"></status>
+<status status="PASS" endtime="20161230 00:45:39.127" starttime="20161230 00:45:38.355"></status>
+</kw>
+<kw type="foritem" name="${count} = 1">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:39.128" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 1 ]</msg>
+<msg timestamp="20161230 00:45:39.128" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;</msg>
+<msg timestamp="20161230 00:45:39.128" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:39.128" starttime="20161230 00:45:39.127"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161230 00:45:39.129" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-2/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-2"}</msg>
+<msg timestamp="20161230 00:45:39.137" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:39.137" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15672797_1139701042801992_5290999065022199499_n.jpg?oh=f5709eee1fe55dad70ccd2c2464d46b9&amp;oe=58DCBC24' ]</msg>
+<msg timestamp="20161230 00:45:39.137" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15672797_1139701042801992_5290999065022199499_n.jpg?oh=f5709eee1fe55dad70ccd2c2464d46b9&amp;oe=58DCBC24'</msg>
+<msg timestamp="20161230 00:45:39.138" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15672797_1139701042801992_5290999065022199499_n.jpg?oh=f5709eee1fe55dad70ccd2c2464d46b9&amp;oe=58DCBC24</msg>
+<status status="PASS" endtime="20161230 00:45:39.138" starttime="20161230 00:45:39.128"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:39.138" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15672797_1139701042801992_5290999065022199499_n.jpg?oh=f5709eee1fe55dad70ccd2c2464d46b9&amp;oe=58DCBC24' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:39.138" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:39.138" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:39.138" starttime="20161230 00:45:39.138"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:39.139" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:39.139" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:39.139" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:39.139" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:39.139" starttime="20161230 00:45:39.139"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:39.140" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:39.141" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:39.141" starttime="20161230 00:45:39.139"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:39.141" level="TRACE">Arguments: [ ${number}=1 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15672797_1139701042801992_5290999065022199499_n.jpg?oh=f5709eee1fe55dad70ccd2c2464d46b9&amp;oe=58DCBC24' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161230 00:45:39.142" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15672797_1139701042801992_5290999065022199499_n.jpg?oh=f5709eee1fe55dad70ccd2c2464d46b9&amp;oe=58DCBC24' | 1 ]</msg>
+<msg timestamp="20161230 00:45:39.144" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:39.504" level="DEBUG">"GET /v/t1.0-9/15672797_1139701042801992_5290999065022199499_n.jpg?oh=f5709eee1fe55dad70ccd2c2464d46b9&amp;oe=58DCBC24 HTTP/1.1" 200 54268</msg>
+<msg timestamp="20161230 00:45:39.744" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:39.744" starttime="20161230 00:45:39.141"></status>
+</kw>
+<msg timestamp="20161230 00:45:39.744" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:39.744" starttime="20161230 00:45:39.141"></status>
+</kw>
+<status status="PASS" endtime="20161230 00:45:39.744" starttime="20161230 00:45:39.127"></status>
 </kw>
 <kw type="foritem" name="${count} = 2">
-<kw name="Get Element Attribute" library="Selenium2Library">
-<doc>Return value of element attribute.</doc>
-<arguments>
-<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
-</arguments>
-<assign>
-<var>${attr}</var>
-</assign>
-<msg timestamp="20161229 21:56:30.354" level="INFO">${attr} = background-image: url("https://images.unsplash.com/reserve/bIdO4DDS4qwVF6pHN4qr__MG_1605.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
-<status status="PASS" endtime="20161229 21:56:30.354" starttime="20161229 21:56:30.331"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${attr}</arg>
-<arg>"</arg>
-</arguments>
-<assign>
-<var>@{urls}</var>
-</assign>
-<msg timestamp="20161229 21:56:30.354" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/reserve/bIdO4DDS4qwVF6pHN4qr__MG_1605.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 684...</msg>
-<status status="PASS" endtime="20161229 21:56:30.354" starttime="20161229 21:56:30.354"></status>
-</kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
 <arguments>
-<arg>${urls}</arg>
-<arg>1</arg>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:39.745" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 2 ]</msg>
+<msg timestamp="20161230 00:45:39.745" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;</msg>
+<msg timestamp="20161230 00:45:39.745" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:39.745" starttime="20161230 00:45:39.744"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
 </arguments>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20161229 21:56:30.355" level="INFO">${url} = https://images.unsplash.com/reserve/bIdO4DDS4qwVF6pHN4qr__MG_1605.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
-<status status="PASS" endtime="20161229 21:56:30.355" starttime="20161229 21:56:30.354"></status>
+<msg timestamp="20161230 00:45:39.746" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-3/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-3"}</msg>
+<msg timestamp="20161230 00:45:39.755" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:39.755" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781674_1139701112801985_1711962196799026573_n.jpg?oh=d4f124a9c2d294267e7b022670524f2d&amp;oe=5922024B' ]</msg>
+<msg timestamp="20161230 00:45:39.755" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781674_1139701112801985_1711962196799026573_n.jpg?oh=d4f124a9c2d294267e7b022670524f2d&amp;oe=5922024B'</msg>
+<msg timestamp="20161230 00:45:39.755" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781674_1139701112801985_1711962196799026573_n.jpg?oh=d4f124a9c2d294267e7b022670524f2d&amp;oe=5922024B</msg>
+<status status="PASS" endtime="20161230 00:45:39.755" starttime="20161230 00:45:39.745"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:39.755" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781674_1139701112801985_1711962196799026573_n.jpg?oh=d4f124a9c2d294267e7b022670524f2d&amp;oe=5922024B' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:39.756" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:39.756" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:39.756" starttime="20161230 00:45:39.755"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:39.756" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:39.756" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:39.756" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:39.756" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:39.756" starttime="20161230 00:45:39.756"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:39.757" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:39.758" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:39.758" starttime="20161230 00:45:39.757"></status>
 </kw>
 <kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:39.758" level="TRACE">Arguments: [ ${number}=2 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781674_1139701112801985_1711962196799026573_n.jpg?oh=d4f124a9c2d294267e7b022670524f2d&amp;oe=5922024B' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
 <kw name="Download Img" library="lib">
 <arguments>
 <arg>${folder}</arg>
 <arg>${url}</arg>
 <arg>${number}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:30.358" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
-<status status="PASS" endtime="20161229 21:56:31.030" starttime="20161229 21:56:30.356"></status>
+<msg timestamp="20161230 00:45:39.759" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781674_1139701112801985_1711962196799026573_n.jpg?oh=d4f124a9c2d294267e7b022670524f2d&amp;oe=5922024B' | 2 ]</msg>
+<msg timestamp="20161230 00:45:39.761" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:40.140" level="DEBUG">"GET /v/t1.0-9/15781674_1139701112801985_1711962196799026573_n.jpg?oh=d4f124a9c2d294267e7b022670524f2d&amp;oe=5922024B HTTP/1.1" 200 87264</msg>
+<msg timestamp="20161230 00:45:40.413" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:40.413" starttime="20161230 00:45:39.759"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:31.031" starttime="20161229 21:56:30.355"></status>
+<msg timestamp="20161230 00:45:40.414" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:40.414" starttime="20161230 00:45:39.758"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:31.031" starttime="20161229 21:56:30.330"></status>
+<status status="PASS" endtime="20161230 00:45:40.414" starttime="20161230 00:45:39.744"></status>
 </kw>
 <kw type="foritem" name="${count} = 3">
-<kw name="Get Element Attribute" library="Selenium2Library">
-<doc>Return value of element attribute.</doc>
-<arguments>
-<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
-</arguments>
-<assign>
-<var>${attr}</var>
-</assign>
-<msg timestamp="20161229 21:56:31.053" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1421906375741-f6bda4abe433?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
-<status status="PASS" endtime="20161229 21:56:31.053" starttime="20161229 21:56:31.031"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${attr}</arg>
-<arg>"</arg>
-</arguments>
-<assign>
-<var>@{urls}</var>
-</assign>
-<msg timestamp="20161229 21:56:31.054" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1421906375741-f6bda4abe433?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 684px; ]</msg>
-<status status="PASS" endtime="20161229 21:56:31.054" starttime="20161229 21:56:31.053"></status>
-</kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
 <arguments>
-<arg>${urls}</arg>
-<arg>1</arg>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:40.414" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 3 ]</msg>
+<msg timestamp="20161230 00:45:40.415" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;</msg>
+<msg timestamp="20161230 00:45:40.415" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:40.415" starttime="20161230 00:45:40.414"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
 </arguments>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20161229 21:56:31.054" level="INFO">${url} = https://images.unsplash.com/photo-1421906375741-f6bda4abe433?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
-<status status="PASS" endtime="20161229 21:56:31.054" starttime="20161229 21:56:31.054"></status>
+<msg timestamp="20161230 00:45:40.415" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-4/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-4"}</msg>
+<msg timestamp="20161230 00:45:40.423" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:40.423" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15724781_1139701046135325_238524977859635656_o.jpg?oh=a3a20c2011c441ee5f6cc58bd22e0f32&amp;oe=58E58D34' ]</msg>
+<msg timestamp="20161230 00:45:40.423" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15724781_1139701046135325_238524977859635656_o.jpg?oh=a3a20c2011c441ee5f6cc58bd22e0f32&amp;oe=58E58D34'</msg>
+<msg timestamp="20161230 00:45:40.423" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15724781_1139701046135325_238524977859635656_o.jpg?oh=a3a20c2011c441ee5f6cc58bd22e0f32&amp;oe=58E58D34</msg>
+<status status="PASS" endtime="20161230 00:45:40.424" starttime="20161230 00:45:40.415"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:40.424" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15724781_1139701046135325_238524977859635656_o.jpg?oh=a3a20c2011c441ee5f6cc58bd22e0f32&amp;oe=58E58D34' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:40.425" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:40.426" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:40.426" starttime="20161230 00:45:40.424"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:40.427" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:40.427" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:40.427" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:40.427" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:40.427" starttime="20161230 00:45:40.426"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:40.428" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:40.429" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:40.429" starttime="20161230 00:45:40.428"></status>
 </kw>
 <kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:40.430" level="TRACE">Arguments: [ ${number}=3 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15724781_1139701046135325_238524977859635656_o.jpg?oh=a3a20c2011c441ee5f6cc58bd22e0f32&amp;oe=58E58D34' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
 <kw name="Download Img" library="lib">
 <arguments>
 <arg>${folder}</arg>
 <arg>${url}</arg>
 <arg>${number}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:31.057" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
-<status status="PASS" endtime="20161229 21:56:31.840" starttime="20161229 21:56:31.055"></status>
+<msg timestamp="20161230 00:45:40.430" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15724781_1139701046135325_238524977859635656_o.jpg?oh=a3a20c2011c441ee5f6cc58bd22e0f32&amp;oe=58E58D34' | 3 ]</msg>
+<msg timestamp="20161230 00:45:40.433" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:40.815" level="DEBUG">"GET /v/t31.0-8/s960x960/15724781_1139701046135325_238524977859635656_o.jpg?oh=a3a20c2011c441ee5f6cc58bd22e0f32&amp;oe=58E58D34 HTTP/1.1" 200 67065</msg>
+<msg timestamp="20161230 00:45:41.089" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:41.090" starttime="20161230 00:45:40.430"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:31.841" starttime="20161229 21:56:31.054"></status>
+<msg timestamp="20161230 00:45:41.090" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:41.090" starttime="20161230 00:45:40.429"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:31.841" starttime="20161229 21:56:31.031"></status>
+<status status="PASS" endtime="20161230 00:45:41.090" starttime="20161230 00:45:40.414"></status>
 </kw>
 <kw type="foritem" name="${count} = 4">
-<kw name="Get Element Attribute" library="Selenium2Library">
-<doc>Return value of element attribute.</doc>
-<arguments>
-<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
-</arguments>
-<assign>
-<var>${attr}</var>
-</assign>
-<msg timestamp="20161229 21:56:31.863" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=783&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 670px;</msg>
-<status status="PASS" endtime="20161229 21:56:31.864" starttime="20161229 21:56:31.841"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${attr}</arg>
-<arg>"</arg>
-</arguments>
-<assign>
-<var>@{urls}</var>
-</assign>
-<msg timestamp="20161229 21:56:31.864" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=783&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 670px; ]</msg>
-<status status="PASS" endtime="20161229 21:56:31.864" starttime="20161229 21:56:31.864"></status>
-</kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
 <arguments>
-<arg>${urls}</arg>
-<arg>1</arg>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:41.091" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 4 ]</msg>
+<msg timestamp="20161230 00:45:41.092" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;</msg>
+<msg timestamp="20161230 00:45:41.092" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:41.092" starttime="20161230 00:45:41.090"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
 </arguments>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20161229 21:56:31.865" level="INFO">${url} = https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=783&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
-<status status="PASS" endtime="20161229 21:56:31.865" starttime="20161229 21:56:31.864"></status>
+<msg timestamp="20161230 00:45:41.093" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-5/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-5"}</msg>
+<msg timestamp="20161230 00:45:41.102" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:41.103" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15723315_1139701129468650_6147904040146052263_o.jpg?oh=3a7517401db6f03e50e1115b4c8dcacb&amp;oe=58D7C04F' ]</msg>
+<msg timestamp="20161230 00:45:41.103" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15723315_1139701129468650_6147904040146052263_o.jpg?oh=3a7517401db6f03e50e1115b4c8dcacb&amp;oe=58D7C04F'</msg>
+<msg timestamp="20161230 00:45:41.103" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15723315_1139701129468650_6147904040146052263_o.jpg?oh=3a7517401db6f03e50e1115b4c8dcacb&amp;oe=58D7C04F</msg>
+<status status="PASS" endtime="20161230 00:45:41.103" starttime="20161230 00:45:41.092"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:41.104" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15723315_1139701129468650_6147904040146052263_o.jpg?oh=3a7517401db6f03e50e1115b4c8dcacb&amp;oe=58D7C04F' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:41.104" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:41.105" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:41.105" starttime="20161230 00:45:41.104"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:41.105" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:41.106" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:41.106" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:41.106" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:41.106" starttime="20161230 00:45:41.105"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:41.107" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:41.115" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:41.115" starttime="20161230 00:45:41.106"></status>
 </kw>
 <kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:41.116" level="TRACE">Arguments: [ ${number}=4 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15723315_1139701129468650_6147904040146052263_o.jpg?oh=3a7517401db6f03e50e1115b4c8dcacb&amp;oe=58D7C04F' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
 <kw name="Download Img" library="lib">
 <arguments>
 <arg>${folder}</arg>
 <arg>${url}</arg>
 <arg>${number}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:31.868" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
-<status status="PASS" endtime="20161229 21:56:33.017" starttime="20161229 21:56:31.865"></status>
+<msg timestamp="20161230 00:45:41.117" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15723315_1139701129468650_6147904040146052263_o.jpg?oh=3a7517401db6f03e50e1115b4c8dcacb&amp;oe=58D7C04F' | 4 ]</msg>
+<msg timestamp="20161230 00:45:41.120" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:41.480" level="DEBUG">"GET /v/t31.0-8/s960x960/15723315_1139701129468650_6147904040146052263_o.jpg?oh=3a7517401db6f03e50e1115b4c8dcacb&amp;oe=58D7C04F HTTP/1.1" 200 106458</msg>
+<msg timestamp="20161230 00:45:41.833" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:41.833" starttime="20161230 00:45:41.117"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:33.017" starttime="20161229 21:56:31.865"></status>
+<msg timestamp="20161230 00:45:41.834" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:41.834" starttime="20161230 00:45:41.116"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:33.018" starttime="20161229 21:56:31.841"></status>
+<status status="PASS" endtime="20161230 00:45:41.834" starttime="20161230 00:45:41.090"></status>
 </kw>
 <kw type="foritem" name="${count} = 5">
-<kw name="Get Element Attribute" library="Selenium2Library">
-<doc>Return value of element attribute.</doc>
-<arguments>
-<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
-</arguments>
-<assign>
-<var>${attr}</var>
-</assign>
-<msg timestamp="20161229 21:56:33.047" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1452698325353-b90e60289e87?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
-<status status="PASS" endtime="20161229 21:56:33.047" starttime="20161229 21:56:33.018"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${attr}</arg>
-<arg>"</arg>
-</arguments>
-<assign>
-<var>@{urls}</var>
-</assign>
-<msg timestamp="20161229 21:56:33.048" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1452698325353-b90e60289e87?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 684px; ]</msg>
-<status status="PASS" endtime="20161229 21:56:33.048" starttime="20161229 21:56:33.047"></status>
-</kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
 <arguments>
-<arg>${urls}</arg>
-<arg>1</arg>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:41.834" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 5 ]</msg>
+<msg timestamp="20161230 00:45:41.835" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;</msg>
+<msg timestamp="20161230 00:45:41.835" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:41.835" starttime="20161230 00:45:41.834"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
 </arguments>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20161229 21:56:33.049" level="INFO">${url} = https://images.unsplash.com/photo-1452698325353-b90e60289e87?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
-<status status="PASS" endtime="20161229 21:56:33.049" starttime="20161229 21:56:33.048"></status>
+<msg timestamp="20161230 00:45:41.835" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-6/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-6"}</msg>
+<msg timestamp="20161230 00:45:41.845" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:41.845" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15731845_1139701086135321_5570488336584537628_o.jpg?oh=72ee80b971ca70ef2b45133b95d8c5f7&amp;oe=58D85FE3' ]</msg>
+<msg timestamp="20161230 00:45:41.846" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15731845_1139701086135321_5570488336584537628_o.jpg?oh=72ee80b971ca70ef2b45133b95d8c5f7&amp;oe=58D85FE3'</msg>
+<msg timestamp="20161230 00:45:41.846" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15731845_1139701086135321_5570488336584537628_o.jpg?oh=72ee80b971ca70ef2b45133b95d8c5f7&amp;oe=58D85FE3</msg>
+<status status="PASS" endtime="20161230 00:45:41.846" starttime="20161230 00:45:41.835"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:41.846" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15731845_1139701086135321_5570488336584537628_o.jpg?oh=72ee80b971ca70ef2b45133b95d8c5f7&amp;oe=58D85FE3' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:41.846" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:41.846" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:41.846" starttime="20161230 00:45:41.846"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:41.847" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:41.847" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:41.847" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:41.847" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:41.847" starttime="20161230 00:45:41.847"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:41.847" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:41.848" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:41.848" starttime="20161230 00:45:41.847"></status>
 </kw>
 <kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:41.849" level="TRACE">Arguments: [ ${number}=5 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15731845_1139701086135321_5570488336584537628_o.jpg?oh=72ee80b971ca70ef2b45133b95d8c5f7&amp;oe=58D85FE3' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
 <kw name="Download Img" library="lib">
 <arguments>
 <arg>${folder}</arg>
 <arg>${url}</arg>
 <arg>${number}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:33.054" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
-<status status="PASS" endtime="20161229 21:56:33.948" starttime="20161229 21:56:33.051"></status>
+<msg timestamp="20161230 00:45:41.849" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15731845_1139701086135321_5570488336584537628_o.jpg?oh=72ee80b971ca70ef2b45133b95d8c5f7&amp;oe=58D85FE3' | 5 ]</msg>
+<msg timestamp="20161230 00:45:41.852" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:42.217" level="DEBUG">"GET /v/t31.0-8/s960x960/15731845_1139701086135321_5570488336584537628_o.jpg?oh=72ee80b971ca70ef2b45133b95d8c5f7&amp;oe=58D85FE3 HTTP/1.1" 200 63615</msg>
+<msg timestamp="20161230 00:45:42.463" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:42.463" starttime="20161230 00:45:41.849"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:33.948" starttime="20161229 21:56:33.049"></status>
+<msg timestamp="20161230 00:45:42.463" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:42.463" starttime="20161230 00:45:41.848"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:33.948" starttime="20161229 21:56:33.018"></status>
+<status status="PASS" endtime="20161230 00:45:42.463" starttime="20161230 00:45:41.834"></status>
 </kw>
 <kw type="foritem" name="${count} = 6">
-<kw name="Get Element Attribute" library="Selenium2Library">
-<doc>Return value of element attribute.</doc>
-<arguments>
-<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
-</arguments>
-<assign>
-<var>${attr}</var>
-</assign>
-<msg timestamp="20161229 21:56:33.970" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1455295299322-3aba0ba23ea3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
-<status status="PASS" endtime="20161229 21:56:33.970" starttime="20161229 21:56:33.948"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${attr}</arg>
-<arg>"</arg>
-</arguments>
-<assign>
-<var>@{urls}</var>
-</assign>
-<msg timestamp="20161229 21:56:33.971" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1455295299322-3aba0ba23ea3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 684px; ]</msg>
-<status status="PASS" endtime="20161229 21:56:33.971" starttime="20161229 21:56:33.970"></status>
-</kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
 <arguments>
-<arg>${urls}</arg>
-<arg>1</arg>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:42.464" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 6 ]</msg>
+<msg timestamp="20161230 00:45:42.464" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;</msg>
+<msg timestamp="20161230 00:45:42.464" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:42.464" starttime="20161230 00:45:42.463"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
 </arguments>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20161229 21:56:33.971" level="INFO">${url} = https://images.unsplash.com/photo-1455295299322-3aba0ba23ea3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
-<status status="PASS" endtime="20161229 21:56:33.971" starttime="20161229 21:56:33.971"></status>
+<msg timestamp="20161230 00:45:42.465" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-7/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-7"}</msg>
+<msg timestamp="20161230 00:45:42.475" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:42.475" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15726324_1139701199468643_2607891704116630740_n.jpg?oh=b8a361140ccf107171fcf42a9b2bece7&amp;oe=58E62A82' ]</msg>
+<msg timestamp="20161230 00:45:42.475" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15726324_1139701199468643_2607891704116630740_n.jpg?oh=b8a361140ccf107171fcf42a9b2bece7&amp;oe=58E62A82'</msg>
+<msg timestamp="20161230 00:45:42.475" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15726324_1139701199468643_2607891704116630740_n.jpg?oh=b8a361140ccf107171fcf42a9b2bece7&amp;oe=58E62A82</msg>
+<status status="PASS" endtime="20161230 00:45:42.475" starttime="20161230 00:45:42.464"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:42.476" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15726324_1139701199468643_2607891704116630740_n.jpg?oh=b8a361140ccf107171fcf42a9b2bece7&amp;oe=58E62A82' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:42.476" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:42.476" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:42.476" starttime="20161230 00:45:42.475"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:42.476" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:42.476" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:42.476" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:42.476" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:42.476" starttime="20161230 00:45:42.476"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:42.477" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:42.477" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:42.478" starttime="20161230 00:45:42.477"></status>
 </kw>
 <kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:42.478" level="TRACE">Arguments: [ ${number}=6 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15726324_1139701199468643_2607891704116630740_n.jpg?oh=b8a361140ccf107171fcf42a9b2bece7&amp;oe=58E62A82' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
 <kw name="Download Img" library="lib">
 <arguments>
 <arg>${folder}</arg>
 <arg>${url}</arg>
 <arg>${number}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:33.974" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
-<status status="PASS" endtime="20161229 21:56:34.446" starttime="20161229 21:56:33.972"></status>
+<msg timestamp="20161230 00:45:42.478" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15726324_1139701199468643_2607891704116630740_n.jpg?oh=b8a361140ccf107171fcf42a9b2bece7&amp;oe=58E62A82' | 6 ]</msg>
+<msg timestamp="20161230 00:45:42.480" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:42.847" level="DEBUG">"GET /v/t1.0-9/15726324_1139701199468643_2607891704116630740_n.jpg?oh=b8a361140ccf107171fcf42a9b2bece7&amp;oe=58E62A82 HTTP/1.1" 200 54417</msg>
+<msg timestamp="20161230 00:45:43.111" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:43.111" starttime="20161230 00:45:42.478"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:34.446" starttime="20161229 21:56:33.971"></status>
+<msg timestamp="20161230 00:45:43.112" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:43.112" starttime="20161230 00:45:42.478"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:34.446" starttime="20161229 21:56:33.948"></status>
+<status status="PASS" endtime="20161230 00:45:43.112" starttime="20161230 00:45:42.463"></status>
 </kw>
 <kw type="foritem" name="${count} = 7">
-<kw name="Get Element Attribute" library="Selenium2Library">
-<doc>Return value of element attribute.</doc>
-<arguments>
-<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
-</arguments>
-<assign>
-<var>${attr}</var>
-</assign>
-<msg timestamp="20161229 21:56:34.468" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=796&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 681px;</msg>
-<status status="PASS" endtime="20161229 21:56:34.468" starttime="20161229 21:56:34.446"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${attr}</arg>
-<arg>"</arg>
-</arguments>
-<assign>
-<var>@{urls}</var>
-</assign>
-<msg timestamp="20161229 21:56:34.469" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=796&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 681px; ]</msg>
-<status status="PASS" endtime="20161229 21:56:34.469" starttime="20161229 21:56:34.468"></status>
-</kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
 <arguments>
-<arg>${urls}</arg>
-<arg>1</arg>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:43.113" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 7 ]</msg>
+<msg timestamp="20161230 00:45:43.113" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;</msg>
+<msg timestamp="20161230 00:45:43.113" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:43.114" starttime="20161230 00:45:43.112"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
 </arguments>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20161229 21:56:34.469" level="INFO">${url} = https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=796&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
-<status status="PASS" endtime="20161229 21:56:34.469" starttime="20161229 21:56:34.469"></status>
+<msg timestamp="20161230 00:45:43.115" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-8/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-8"}</msg>
+<msg timestamp="20161230 00:45:43.126" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:43.126" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15698068_1139701279468635_2905965394058499535_n.jpg?oh=b1822c8643ea8cc34de800833f9212f1&amp;oe=58D87ED3' ]</msg>
+<msg timestamp="20161230 00:45:43.126" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15698068_1139701279468635_2905965394058499535_n.jpg?oh=b1822c8643ea8cc34de800833f9212f1&amp;oe=58D87ED3'</msg>
+<msg timestamp="20161230 00:45:43.126" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15698068_1139701279468635_2905965394058499535_n.jpg?oh=b1822c8643ea8cc34de800833f9212f1&amp;oe=58D87ED3</msg>
+<status status="PASS" endtime="20161230 00:45:43.126" starttime="20161230 00:45:43.114"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:43.127" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15698068_1139701279468635_2905965394058499535_n.jpg?oh=b1822c8643ea8cc34de800833f9212f1&amp;oe=58D87ED3' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:43.127" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:43.128" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:43.128" starttime="20161230 00:45:43.126"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:43.128" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:43.128" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:43.128" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:43.129" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:43.129" starttime="20161230 00:45:43.128"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:43.129" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:43.130" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:43.130" starttime="20161230 00:45:43.129"></status>
 </kw>
 <kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:43.131" level="TRACE">Arguments: [ ${number}=7 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15698068_1139701279468635_2905965394058499535_n.jpg?oh=b1822c8643ea8cc34de800833f9212f1&amp;oe=58D87ED3' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
 <kw name="Download Img" library="lib">
 <arguments>
 <arg>${folder}</arg>
 <arg>${url}</arg>
 <arg>${number}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:34.472" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
-<status status="PASS" endtime="20161229 21:56:35.156" starttime="20161229 21:56:34.470"></status>
+<msg timestamp="20161230 00:45:43.131" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15698068_1139701279468635_2905965394058499535_n.jpg?oh=b1822c8643ea8cc34de800833f9212f1&amp;oe=58D87ED3' | 7 ]</msg>
+<msg timestamp="20161230 00:45:43.134" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:43.498" level="DEBUG">"GET /v/t1.0-9/15698068_1139701279468635_2905965394058499535_n.jpg?oh=b1822c8643ea8cc34de800833f9212f1&amp;oe=58D87ED3 HTTP/1.1" 200 58767</msg>
+<msg timestamp="20161230 00:45:43.750" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:43.750" starttime="20161230 00:45:43.131"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:35.157" starttime="20161229 21:56:34.469"></status>
+<msg timestamp="20161230 00:45:43.750" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:43.750" starttime="20161230 00:45:43.130"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:35.157" starttime="20161229 21:56:34.446"></status>
+<status status="PASS" endtime="20161230 00:45:43.751" starttime="20161230 00:45:43.112"></status>
 </kw>
 <kw type="foritem" name="${count} = 8">
-<kw name="Get Element Attribute" library="Selenium2Library">
-<doc>Return value of element attribute.</doc>
-<arguments>
-<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
-</arguments>
-<assign>
-<var>${attr}</var>
-</assign>
-<msg timestamp="20161229 21:56:35.181" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1475139450941-3b6464b2dde3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=673&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 576px;</msg>
-<status status="PASS" endtime="20161229 21:56:35.181" starttime="20161229 21:56:35.157"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${attr}</arg>
-<arg>"</arg>
-</arguments>
-<assign>
-<var>@{urls}</var>
-</assign>
-<msg timestamp="20161229 21:56:35.181" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1475139450941-3b6464b2dde3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=673&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 576px; ]</msg>
-<status status="PASS" endtime="20161229 21:56:35.181" starttime="20161229 21:56:35.181"></status>
-</kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
 <arguments>
-<arg>${urls}</arg>
-<arg>1</arg>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:43.751" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 8 ]</msg>
+<msg timestamp="20161230 00:45:43.752" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;</msg>
+<msg timestamp="20161230 00:45:43.752" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:43.752" starttime="20161230 00:45:43.751"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
 </arguments>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20161229 21:56:35.182" level="INFO">${url} = https://images.unsplash.com/photo-1475139450941-3b6464b2dde3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=673&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
-<status status="PASS" endtime="20161229 21:56:35.182" starttime="20161229 21:56:35.181"></status>
+<msg timestamp="20161230 00:45:43.753" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-9/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-9"}</msg>
+<msg timestamp="20161230 00:45:43.765" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:43.765" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15740834_1139701226135307_2118676158707190745_n.jpg?oh=5b31a36d42f20c243dd3880037ded400&amp;oe=59225BEF' ]</msg>
+<msg timestamp="20161230 00:45:43.765" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15740834_1139701226135307_2118676158707190745_n.jpg?oh=5b31a36d42f20c243dd3880037ded400&amp;oe=59225BEF'</msg>
+<msg timestamp="20161230 00:45:43.765" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15740834_1139701226135307_2118676158707190745_n.jpg?oh=5b31a36d42f20c243dd3880037ded400&amp;oe=59225BEF</msg>
+<status status="PASS" endtime="20161230 00:45:43.766" starttime="20161230 00:45:43.753"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:43.767" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15740834_1139701226135307_2118676158707190745_n.jpg?oh=5b31a36d42f20c243dd3880037ded400&amp;oe=59225BEF' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:43.767" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:43.767" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:43.767" starttime="20161230 00:45:43.766"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:43.768" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:43.768" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:43.768" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:43.768" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:43.768" starttime="20161230 00:45:43.768"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:43.769" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:43.770" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:43.770" starttime="20161230 00:45:43.769"></status>
 </kw>
 <kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:43.771" level="TRACE">Arguments: [ ${number}=8 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15740834_1139701226135307_2118676158707190745_n.jpg?oh=5b31a36d42f20c243dd3880037ded400&amp;oe=59225BEF' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
 <kw name="Download Img" library="lib">
 <arguments>
 <arg>${folder}</arg>
 <arg>${url}</arg>
 <arg>${number}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:35.186" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
-<status status="PASS" endtime="20161229 21:56:36.002" starttime="20161229 21:56:35.183"></status>
+<msg timestamp="20161230 00:45:43.771" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15740834_1139701226135307_2118676158707190745_n.jpg?oh=5b31a36d42f20c243dd3880037ded400&amp;oe=59225BEF' | 8 ]</msg>
+<msg timestamp="20161230 00:45:43.776" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:44.139" level="DEBUG">"GET /v/t1.0-9/15740834_1139701226135307_2118676158707190745_n.jpg?oh=5b31a36d42f20c243dd3880037ded400&amp;oe=59225BEF HTTP/1.1" 200 46993</msg>
+<msg timestamp="20161230 00:45:44.373" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:44.373" starttime="20161230 00:45:43.771"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:36.003" starttime="20161229 21:56:35.182"></status>
+<msg timestamp="20161230 00:45:44.373" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:44.373" starttime="20161230 00:45:43.770"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:36.003" starttime="20161229 21:56:35.157"></status>
+<status status="PASS" endtime="20161230 00:45:44.373" starttime="20161230 00:45:43.751"></status>
 </kw>
 <kw type="foritem" name="${count} = 9">
-<kw name="Get Element Attribute" library="Selenium2Library">
-<doc>Return value of element attribute.</doc>
-<arguments>
-<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
-</arguments>
-<assign>
-<var>${attr}</var>
-</assign>
-<msg timestamp="20161229 21:56:36.035" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1446628634513-ae07c7225559?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
-<status status="PASS" endtime="20161229 21:56:36.035" starttime="20161229 21:56:36.003"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${attr}</arg>
-<arg>"</arg>
-</arguments>
-<assign>
-<var>@{urls}</var>
-</assign>
-<msg timestamp="20161229 21:56:36.036" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1446628634513-ae07c7225559?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 684px; ]</msg>
-<status status="PASS" endtime="20161229 21:56:36.036" starttime="20161229 21:56:36.035"></status>
-</kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
 <arguments>
-<arg>${urls}</arg>
-<arg>1</arg>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:44.374" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 9 ]</msg>
+<msg timestamp="20161230 00:45:44.374" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;</msg>
+<msg timestamp="20161230 00:45:44.374" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:44.374" starttime="20161230 00:45:44.373"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
 </arguments>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20161229 21:56:36.036" level="INFO">${url} = https://images.unsplash.com/photo-1446628634513-ae07c7225559?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
-<status status="PASS" endtime="20161229 21:56:36.036" starttime="20161229 21:56:36.036"></status>
+<msg timestamp="20161230 00:45:44.375" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-10/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-10"}</msg>
+<msg timestamp="20161230 00:45:44.382" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:44.383" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15697869_1139701432801953_6221146006055900706_n.jpg?oh=f85f9ab0f5f762e02fff0b666649eb08&amp;oe=58E38F37' ]</msg>
+<msg timestamp="20161230 00:45:44.383" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15697869_1139701432801953_6221146006055900706_n.jpg?oh=f85f9ab0f5f762e02fff0b666649eb08&amp;oe=58E38F37'</msg>
+<msg timestamp="20161230 00:45:44.383" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15697869_1139701432801953_6221146006055900706_n.jpg?oh=f85f9ab0f5f762e02fff0b666649eb08&amp;oe=58E38F37</msg>
+<status status="PASS" endtime="20161230 00:45:44.383" starttime="20161230 00:45:44.374"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:44.384" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15697869_1139701432801953_6221146006055900706_n.jpg?oh=f85f9ab0f5f762e02fff0b666649eb08&amp;oe=58E38F37' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:44.384" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:44.384" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:44.384" starttime="20161230 00:45:44.383"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:44.384" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:44.384" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:44.385" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:44.385" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:44.385" starttime="20161230 00:45:44.384"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:44.385" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:44.386" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:44.386" starttime="20161230 00:45:44.385"></status>
 </kw>
 <kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:44.386" level="TRACE">Arguments: [ ${number}=9 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15697869_1139701432801953_6221146006055900706_n.jpg?oh=f85f9ab0f5f762e02fff0b666649eb08&amp;oe=58E38F37' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
 <kw name="Download Img" library="lib">
 <arguments>
 <arg>${folder}</arg>
 <arg>${url}</arg>
 <arg>${number}</arg>
 </arguments>
-<msg timestamp="20161229 21:56:36.040" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
-<status status="PASS" endtime="20161229 21:56:36.774" starttime="20161229 21:56:36.037"></status>
+<msg timestamp="20161230 00:45:44.387" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15697869_1139701432801953_6221146006055900706_n.jpg?oh=f85f9ab0f5f762e02fff0b666649eb08&amp;oe=58E38F37' | 9 ]</msg>
+<msg timestamp="20161230 00:45:44.389" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:44.762" level="DEBUG">"GET /v/t1.0-9/15697869_1139701432801953_6221146006055900706_n.jpg?oh=f85f9ab0f5f762e02fff0b666649eb08&amp;oe=58E38F37 HTTP/1.1" 200 65703</msg>
+<msg timestamp="20161230 00:45:45.014" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:45.014" starttime="20161230 00:45:44.387"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:36.774" starttime="20161229 21:56:36.037"></status>
+<msg timestamp="20161230 00:45:45.014" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:45.014" starttime="20161230 00:45:44.386"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:36.774" starttime="20161229 21:56:36.003"></status>
+<status status="PASS" endtime="20161230 00:45:45.014" starttime="20161230 00:45:44.373"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:36.774" starttime="20161229 21:56:29.542"></status>
+<kw type="foritem" name="${count} = 10">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:45.015" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 10 ]</msg>
+<msg timestamp="20161230 00:45:45.016" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;</msg>
+<msg timestamp="20161230 00:45:45.016" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:45.016" starttime="20161230 00:45:45.015"></status>
 </kw>
-<status status="PASS" endtime="20161229 21:56:36.774" starttime="20161229 21:56:29.541"></status>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161230 00:45:45.016" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-11/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-11"}</msg>
+<msg timestamp="20161230 00:45:45.024" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:45.024" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747870_1139701366135293_853292563209482962_n.jpg?oh=2aa769babb097139dc39e90675d37b50&amp;oe=58DC18B7' ]</msg>
+<msg timestamp="20161230 00:45:45.025" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747870_1139701366135293_853292563209482962_n.jpg?oh=2aa769babb097139dc39e90675d37b50&amp;oe=58DC18B7'</msg>
+<msg timestamp="20161230 00:45:45.025" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747870_1139701366135293_853292563209482962_n.jpg?oh=2aa769babb097139dc39e90675d37b50&amp;oe=58DC18B7</msg>
+<status status="PASS" endtime="20161230 00:45:45.025" starttime="20161230 00:45:45.016"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:45.025" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747870_1139701366135293_853292563209482962_n.jpg?oh=2aa769babb097139dc39e90675d37b50&amp;oe=58DC18B7' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:45.025" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:45.026" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:45.026" starttime="20161230 00:45:45.025"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:45.026" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:45.026" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:45.026" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:45.026" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:45.026" starttime="20161230 00:45:45.026"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:45.027" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:45.028" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:45.028" starttime="20161230 00:45:45.027"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:45.028" level="TRACE">Arguments: [ ${number}=10 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747870_1139701366135293_853292563209482962_n.jpg?oh=2aa769babb097139dc39e90675d37b50&amp;oe=58DC18B7' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161230 00:45:45.029" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747870_1139701366135293_853292563209482962_n.jpg?oh=2aa769babb097139dc39e90675d37b50&amp;oe=58DC18B7' | 10 ]</msg>
+<msg timestamp="20161230 00:45:45.031" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:45.414" level="DEBUG">"GET /v/t1.0-9/15747870_1139701366135293_853292563209482962_n.jpg?oh=2aa769babb097139dc39e90675d37b50&amp;oe=58DC18B7 HTTP/1.1" 200 46436</msg>
+<msg timestamp="20161230 00:45:45.661" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:45.661" starttime="20161230 00:45:45.028"></status>
+</kw>
+<msg timestamp="20161230 00:45:45.661" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:45.661" starttime="20161230 00:45:45.028"></status>
+</kw>
+<status status="PASS" endtime="20161230 00:45:45.661" starttime="20161230 00:45:45.014"></status>
+</kw>
+<kw type="foritem" name="${count} = 11">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:45.662" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 11 ]</msg>
+<msg timestamp="20161230 00:45:45.662" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;</msg>
+<msg timestamp="20161230 00:45:45.662" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:45.662" starttime="20161230 00:45:45.661"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161230 00:45:45.663" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-12/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-12"}</msg>
+<msg timestamp="20161230 00:45:45.671" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:45.671" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747758_1139701422801954_1847459478394787443_n.jpg?oh=e3fa918427fd781e3e3e3812e167887f&amp;oe=58E97D0F' ]</msg>
+<msg timestamp="20161230 00:45:45.671" level="TRACE">Return: 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747758_1139701422801954_1847459478394787443_n.jpg?oh=e3fa918427fd781e3e3e3812e167887f&amp;oe=58E97D0F'</msg>
+<msg timestamp="20161230 00:45:45.672" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747758_1139701422801954_1847459478394787443_n.jpg?oh=e3fa918427fd781e3e3e3812e167887f&amp;oe=58E97D0F</msg>
+<status status="PASS" endtime="20161230 00:45:45.672" starttime="20161230 00:45:45.662"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:45.672" level="TRACE">Arguments: [ 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747758_1139701422801954_1847459478394787443_n.jpg?oh=e3fa918427fd781e3e3e3812e167887f&amp;oe=58E97D0F' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:45.672" level="TRACE">Return: []</msg>
+<msg timestamp="20161230 00:45:45.672" level="INFO">${gif_array} = []</msg>
+<status status="PASS" endtime="20161230 00:45:45.672" starttime="20161230 00:45:45.672"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:45.673" level="TRACE">Arguments: [ [] ]</msg>
+<msg timestamp="20161230 00:45:45.673" level="INFO">Length is 0</msg>
+<msg timestamp="20161230 00:45:45.673" level="TRACE">Return: 0</msg>
+<msg timestamp="20161230 00:45:45.673" level="INFO">${total_gif} = 0</msg>
+<status status="PASS" endtime="20161230 00:45:45.673" starttime="20161230 00:45:45.672"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:45.673" level="TRACE">Arguments: [ "'0'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:45.674" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:45.674" starttime="20161230 00:45:45.673"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<msg timestamp="20161230 00:45:45.674" level="TRACE">Arguments: [ ${number}=11 | ${url}='https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747758_1139701422801954_1847459478394787443_n.jpg?oh=e3fa918427fd781e3e3e3812e167887f&amp;oe=58E97D0F' | ${folder}='\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' ]</msg>
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161230 00:45:45.675" level="TRACE">Arguments: [ '\u0e19\u0e49\u0e2d\u0e07\u0e41\u0e22\u0e21 \u0e43\u0e2a\u0e43\u0e2a #CupE' | 'https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747758_1139701422801954_1847459478394787443_n.jpg?oh=e3fa918427fd781e3e3e3812e167887f&amp;oe=58E97D0F' | 11 ]</msg>
+<msg timestamp="20161230 00:45:45.677" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<msg timestamp="20161230 00:45:46.037" level="DEBUG">"GET /v/t1.0-9/15747758_1139701422801954_1847459478394787443_n.jpg?oh=e3fa918427fd781e3e3e3812e167887f&amp;oe=58E97D0F HTTP/1.1" 200 57662</msg>
+<msg timestamp="20161230 00:45:46.279" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:46.279" starttime="20161230 00:45:45.675"></status>
+</kw>
+<msg timestamp="20161230 00:45:46.279" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:46.279" starttime="20161230 00:45:45.674"></status>
+</kw>
+<status status="PASS" endtime="20161230 00:45:46.279" starttime="20161230 00:45:45.661"></status>
+</kw>
+<kw type="foritem" name="${count} = 12">
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${test_list_images}</arg>
+<arg>${count}</arg>
+</arguments>
+<assign>
+<var>${image}</var>
+</assign>
+<msg timestamp="20161230 00:45:46.280" level="TRACE">Arguments: [ [&lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-1")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-2")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-3")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-4")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-5")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-6")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-7")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-8")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-9")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-10")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-11")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-12")&gt;,
+ &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;] | 12 ]</msg>
+<msg timestamp="20161230 00:45:46.280" level="TRACE">Return: &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;</msg>
+<msg timestamp="20161230 00:45:46.280" level="INFO">${image} = &lt;selenium.webdriver.remote.webelement.WebElement (session="222441636e1ebcff8573d2bcdaddd840", element="0.35375315316975287-13")&gt;</msg>
+<status status="PASS" endtime="20161230 00:45:46.280" starttime="20161230 00:45:46.280"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${image.get_attribute('src')}</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161230 00:45:46.281" level="DEBUG">GET http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840/element/0.35375315316975287-13/attribute/src {"sessionId": "222441636e1ebcff8573d2bcdaddd840", "name": "src", "id": "0.35375315316975287-13"}</msg>
+<msg timestamp="20161230 00:45:46.289" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:46.289" level="TRACE">Arguments: [ 'http://www.soccersuck.com/soccer/images/smiles/nn10.gif' ]</msg>
+<msg timestamp="20161230 00:45:46.289" level="TRACE">Return: 'http://www.soccersuck.com/soccer/images/smiles/nn10.gif'</msg>
+<msg timestamp="20161230 00:45:46.289" level="INFO">${url} = http://www.soccersuck.com/soccer/images/smiles/nn10.gif</msg>
+<status status="PASS" endtime="20161230 00:45:46.289" starttime="20161230 00:45:46.281"></status>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>.gif</arg>
+</arguments>
+<assign>
+<var>${gif_array}</var>
+</assign>
+<msg timestamp="20161230 00:45:46.290" level="TRACE">Arguments: [ 'http://www.soccersuck.com/soccer/images/smiles/nn10.gif' | '.gif' ]</msg>
+<msg timestamp="20161230 00:45:46.290" level="TRACE">Return: ['.gif']</msg>
+<msg timestamp="20161230 00:45:46.290" level="INFO">${gif_array} = [u'.gif']</msg>
+<status status="PASS" endtime="20161230 00:45:46.290" starttime="20161230 00:45:46.289"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${gif_array}</arg>
+</arguments>
+<assign>
+<var>${total_gif}</var>
+</assign>
+<msg timestamp="20161230 00:45:46.290" level="TRACE">Arguments: [ ['.gif'] ]</msg>
+<msg timestamp="20161230 00:45:46.290" level="INFO">Length is 1</msg>
+<msg timestamp="20161230 00:45:46.291" level="TRACE">Return: 1</msg>
+<msg timestamp="20161230 00:45:46.291" level="INFO">${total_gif} = 1</msg>
+<status status="PASS" endtime="20161230 00:45:46.291" starttime="20161230 00:45:46.290"></status>
+</kw>
+<kw name="Continue For Loop If" library="BuiltIn">
+<doc>Skips the current for loop iteration if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${total_gif}'!='0'</arg>
+</arguments>
+<msg timestamp="20161230 00:45:46.291" level="TRACE">Arguments: [ "'1'!='0'" ]</msg>
+<msg timestamp="20161230 00:45:46.292" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" endtime="20161230 00:45:46.292" starttime="20161230 00:45:46.291"></status>
+</kw>
+<status status="PASS" endtime="20161230 00:45:46.292" starttime="20161230 00:45:46.279"></status>
+</kw>
+<status status="PASS" endtime="20161230 00:45:46.292" starttime="20161230 00:45:38.353"></status>
+</kw>
+<msg timestamp="20161230 00:45:46.292" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:46.292" starttime="20161230 00:45:38.351"></status>
 </kw>
 <kw type="teardown" name="Close All Browsers" library="Selenium2Library">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" endtime="20161229 21:56:36.855" starttime="20161229 21:56:36.774"></status>
+<msg timestamp="20161230 00:45:46.293" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20161230 00:45:46.293" level="DEBUG">Closing all browsers</msg>
+<msg timestamp="20161230 00:45:46.294" level="DEBUG">DELETE http://127.0.0.1:53593/session/222441636e1ebcff8573d2bcdaddd840 {"sessionId": "222441636e1ebcff8573d2bcdaddd840"}</msg>
+<msg timestamp="20161230 00:45:46.399" level="DEBUG">Finished Request</msg>
+<msg timestamp="20161230 00:45:46.451" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20161230 00:45:46.451" starttime="20161230 00:45:46.293"></status>
 </kw>
-<doc>To download images from [https://unsplash.com/?grid=single] in the first page</doc>
-<status status="PASS" endtime="20161229 21:56:36.855" critical="yes" starttime="20161229 21:56:19.733"></status>
+<doc>To download images from [http://www.soccersuck.com] in xcorner</doc>
+<status status="PASS" endtime="20161230 00:45:46.451" critical="yes" starttime="20161230 00:45:16.421"></status>
 </test>
-<status status="PASS" endtime="20161229 21:56:36.857" starttime="20161229 21:56:19.394"></status>
+<status status="PASS" endtime="20161230 00:45:46.453" starttime="20161230 00:45:15.980"></status>
 </suite>
 <statistics>
 <total>
@@ -557,7 +1523,7 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20161229 21:56:19.608" level="ERROR">Error in file '/Users/ripzery/PycharmProjects/download_unsplash/config/config.robot': Importing test library 'RequestsLibrary' failed: ImportError: No module named RequestsLibrary
+<msg timestamp="20161230 00:45:16.224" level="ERROR">Error in file '/Users/ripzery/PycharmProjects/download_unsplash/config/config.robot': Importing test library 'RequestsLibrary' failed: ImportError: No module named RequestsLibrary
 Traceback (most recent call last):
   None
 PYTHONPATH:
