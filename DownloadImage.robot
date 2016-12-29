@@ -5,17 +5,14 @@ Resource      ./keywords/Unsplash.robot
 Test Teardown  Close All Browsers
 
 *** Test Cases ***
-[1] Download Image From Unsplash
+[1] Download Image From Unsplash First Page
     [Documentation]    To download images from [${UNSPLASH_URL}] in the first page
     [Setup]            Setup Unsplash
-    ${total_image}=     Get Matching Xpath Count    //*[@id="gridSingle"]/div/a
-    :FOR    ${count}    IN RANGE    1    ${total_image}
-    \    ${attr}=       Get Element Attribute     //*[@id="gridSingle"]/div[${count}]/a@style
-    \    @{urls}=       Split String     ${attr}     "
-    \    ${url}=     Get From List    ${urls}     1
-    \    Download Img    ${url}     ${count}
+    Given Unsplash has images
+    And Create Folder From Window Title
+    Then Download image from unsplash '${test_total_image}' image
 
-[2] Download Image From Soccersuck
+[2] Download Image From Soccersuck Xcorner
     [Documentation]    To download images from [${SOCCERSUCK_URL}] in xcorner
     [Setup]            Setup Soccersuck
     Given Soccersuck Has Xcorner Section

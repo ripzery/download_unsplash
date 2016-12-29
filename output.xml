@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20161229 21:56:19.391" generator="Robot 3.0 (Python 2.7.10 on darwin)">
+<suite source="/Users/ripzery/PycharmProjects/download_unsplash/DownloadImage.robot" id="s1" name="DownloadImage">
+<test id="s1-t1" name="[1] Download Image From Unsplash">
+<kw type="setup" name="Setup Unsplash" library="DownloadImage">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${UNSPLASH_URL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20161229 21:56:19.736" level="INFO">Opening browser 'chrome' to base url 'https://unsplash.com/?grid=single'</msg>
+<status status="PASS" endtime="20161229 21:56:29.483" starttime="20161229 21:56:19.735"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:29.485" starttime="20161229 21:56:19.735"></status>
+</kw>
+<kw name="Given Unsplash has images" library="Unsplash">
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>//*[@id="gridSingle"]/div/a</arg>
+</arguments>
+<assign>
+<var>${total_image}</var>
+</assign>
+<msg timestamp="20161229 21:56:29.519" level="INFO">${total_image} = 10</msg>
+<status status="PASS" endtime="20161229 21:56:29.519" starttime="20161229 21:56:29.489"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${test_total_image}</arg>
+<arg>${total_image}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:29.521" level="INFO">${test_total_image} = 10</msg>
+<status status="PASS" endtime="20161229 21:56:29.521" starttime="20161229 21:56:29.519"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:29.521" starttime="20161229 21:56:29.488"></status>
+</kw>
+<kw name="And Create Folder From Window Title" library="DownloadImage">
+<kw name="Get Folder Name From Window Title" library="DownloadImage">
+<kw name="Get Window Titles" library="Selenium2Library">
+<doc>Returns and logs titles of all windows known to the browser.</doc>
+<assign>
+<var>@{title}</var>
+</assign>
+<msg timestamp="20161229 21:56:29.536" level="INFO">Altogether 1 item.
+1: Unsplash | Free High-Resolution Photos</msg>
+<msg timestamp="20161229 21:56:29.537" level="INFO">@{title} = [ Unsplash | Free High-Resolution Photos ]</msg>
+<status status="PASS" endtime="20161229 21:56:29.537" starttime="20161229 21:56:29.522"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${title}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20161229 21:56:29.537" level="INFO">${title} = Unsplash | Free High-Resolution Photos</msg>
+<status status="PASS" endtime="20161229 21:56:29.537" starttime="20161229 21:56:29.537"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${test_title}</arg>
+<arg>${title}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:29.539" level="INFO">${test_title} = Unsplash | Free High-Resolution Photos</msg>
+<status status="PASS" endtime="20161229 21:56:29.539" starttime="20161229 21:56:29.538"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:29.539" starttime="20161229 21:56:29.522"></status>
+</kw>
+<kw name="Create Folder" library="lib">
+<arguments>
+<arg>${test_title}</arg>
+</arguments>
+<status status="PASS" endtime="20161229 21:56:29.540" starttime="20161229 21:56:29.540"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:29.540" starttime="20161229 21:56:29.521"></status>
+</kw>
+<kw name="Then Download image from unsplash '${test_total_image}' image" library="Unsplash">
+<kw type="for" name="${count} IN RANGE [ 1 | ${total} ]">
+<kw type="foritem" name="${count} = 1">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
+</arguments>
+<assign>
+<var>${attr}</var>
+</assign>
+<msg timestamp="20161229 21:56:29.580" level="INFO">${attr} = background-image: url("https://images.unsplash.com/reserve/Ceszw9OoQD6rwMhfDl9R_render0006.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
+<status status="PASS" endtime="20161229 21:56:29.580" starttime="20161229 21:56:29.544"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${attr}</arg>
+<arg>"</arg>
+</arguments>
+<assign>
+<var>@{urls}</var>
+</assign>
+<msg timestamp="20161229 21:56:29.581" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/reserve/Ceszw9OoQD6rwMhfDl9R_render0006.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 6...</msg>
+<status status="PASS" endtime="20161229 21:56:29.581" starttime="20161229 21:56:29.581"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${urls}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:56:29.582" level="INFO">${url} = https://images.unsplash.com/reserve/Ceszw9OoQD6rwMhfDl9R_render0006.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
+<status status="PASS" endtime="20161229 21:56:29.582" starttime="20161229 21:56:29.581"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:29.618" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
+<status status="PASS" endtime="20161229 21:56:30.330" starttime="20161229 21:56:29.583"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:30.330" starttime="20161229 21:56:29.582"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:30.330" starttime="20161229 21:56:29.543"></status>
+</kw>
+<kw type="foritem" name="${count} = 2">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
+</arguments>
+<assign>
+<var>${attr}</var>
+</assign>
+<msg timestamp="20161229 21:56:30.354" level="INFO">${attr} = background-image: url("https://images.unsplash.com/reserve/bIdO4DDS4qwVF6pHN4qr__MG_1605.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
+<status status="PASS" endtime="20161229 21:56:30.354" starttime="20161229 21:56:30.331"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${attr}</arg>
+<arg>"</arg>
+</arguments>
+<assign>
+<var>@{urls}</var>
+</assign>
+<msg timestamp="20161229 21:56:30.354" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/reserve/bIdO4DDS4qwVF6pHN4qr__MG_1605.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 684...</msg>
+<status status="PASS" endtime="20161229 21:56:30.354" starttime="20161229 21:56:30.354"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${urls}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:56:30.355" level="INFO">${url} = https://images.unsplash.com/reserve/bIdO4DDS4qwVF6pHN4qr__MG_1605.jpg?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
+<status status="PASS" endtime="20161229 21:56:30.355" starttime="20161229 21:56:30.354"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:30.358" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
+<status status="PASS" endtime="20161229 21:56:31.030" starttime="20161229 21:56:30.356"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:31.031" starttime="20161229 21:56:30.355"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:31.031" starttime="20161229 21:56:30.330"></status>
+</kw>
+<kw type="foritem" name="${count} = 3">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
+</arguments>
+<assign>
+<var>${attr}</var>
+</assign>
+<msg timestamp="20161229 21:56:31.053" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1421906375741-f6bda4abe433?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
+<status status="PASS" endtime="20161229 21:56:31.053" starttime="20161229 21:56:31.031"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${attr}</arg>
+<arg>"</arg>
+</arguments>
+<assign>
+<var>@{urls}</var>
+</assign>
+<msg timestamp="20161229 21:56:31.054" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1421906375741-f6bda4abe433?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 684px; ]</msg>
+<status status="PASS" endtime="20161229 21:56:31.054" starttime="20161229 21:56:31.053"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${urls}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:56:31.054" level="INFO">${url} = https://images.unsplash.com/photo-1421906375741-f6bda4abe433?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
+<status status="PASS" endtime="20161229 21:56:31.054" starttime="20161229 21:56:31.054"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:31.057" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
+<status status="PASS" endtime="20161229 21:56:31.840" starttime="20161229 21:56:31.055"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:31.841" starttime="20161229 21:56:31.054"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:31.841" starttime="20161229 21:56:31.031"></status>
+</kw>
+<kw type="foritem" name="${count} = 4">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
+</arguments>
+<assign>
+<var>${attr}</var>
+</assign>
+<msg timestamp="20161229 21:56:31.863" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=783&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 670px;</msg>
+<status status="PASS" endtime="20161229 21:56:31.864" starttime="20161229 21:56:31.841"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${attr}</arg>
+<arg>"</arg>
+</arguments>
+<assign>
+<var>@{urls}</var>
+</assign>
+<msg timestamp="20161229 21:56:31.864" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=783&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 670px; ]</msg>
+<status status="PASS" endtime="20161229 21:56:31.864" starttime="20161229 21:56:31.864"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${urls}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:56:31.865" level="INFO">${url} = https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=783&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
+<status status="PASS" endtime="20161229 21:56:31.865" starttime="20161229 21:56:31.864"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:31.868" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
+<status status="PASS" endtime="20161229 21:56:33.017" starttime="20161229 21:56:31.865"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:33.017" starttime="20161229 21:56:31.865"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:33.018" starttime="20161229 21:56:31.841"></status>
+</kw>
+<kw type="foritem" name="${count} = 5">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
+</arguments>
+<assign>
+<var>${attr}</var>
+</assign>
+<msg timestamp="20161229 21:56:33.047" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1452698325353-b90e60289e87?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
+<status status="PASS" endtime="20161229 21:56:33.047" starttime="20161229 21:56:33.018"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${attr}</arg>
+<arg>"</arg>
+</arguments>
+<assign>
+<var>@{urls}</var>
+</assign>
+<msg timestamp="20161229 21:56:33.048" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1452698325353-b90e60289e87?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 684px; ]</msg>
+<status status="PASS" endtime="20161229 21:56:33.048" starttime="20161229 21:56:33.047"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${urls}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:56:33.049" level="INFO">${url} = https://images.unsplash.com/photo-1452698325353-b90e60289e87?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
+<status status="PASS" endtime="20161229 21:56:33.049" starttime="20161229 21:56:33.048"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:33.054" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
+<status status="PASS" endtime="20161229 21:56:33.948" starttime="20161229 21:56:33.051"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:33.948" starttime="20161229 21:56:33.049"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:33.948" starttime="20161229 21:56:33.018"></status>
+</kw>
+<kw type="foritem" name="${count} = 6">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
+</arguments>
+<assign>
+<var>${attr}</var>
+</assign>
+<msg timestamp="20161229 21:56:33.970" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1455295299322-3aba0ba23ea3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
+<status status="PASS" endtime="20161229 21:56:33.970" starttime="20161229 21:56:33.948"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${attr}</arg>
+<arg>"</arg>
+</arguments>
+<assign>
+<var>@{urls}</var>
+</assign>
+<msg timestamp="20161229 21:56:33.971" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1455295299322-3aba0ba23ea3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 684px; ]</msg>
+<status status="PASS" endtime="20161229 21:56:33.971" starttime="20161229 21:56:33.970"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${urls}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:56:33.971" level="INFO">${url} = https://images.unsplash.com/photo-1455295299322-3aba0ba23ea3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
+<status status="PASS" endtime="20161229 21:56:33.971" starttime="20161229 21:56:33.971"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:33.974" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
+<status status="PASS" endtime="20161229 21:56:34.446" starttime="20161229 21:56:33.972"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:34.446" starttime="20161229 21:56:33.971"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:34.446" starttime="20161229 21:56:33.948"></status>
+</kw>
+<kw type="foritem" name="${count} = 7">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
+</arguments>
+<assign>
+<var>${attr}</var>
+</assign>
+<msg timestamp="20161229 21:56:34.468" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=796&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 681px;</msg>
+<status status="PASS" endtime="20161229 21:56:34.468" starttime="20161229 21:56:34.446"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${attr}</arg>
+<arg>"</arg>
+</arguments>
+<assign>
+<var>@{urls}</var>
+</assign>
+<msg timestamp="20161229 21:56:34.469" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=796&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 681px; ]</msg>
+<status status="PASS" endtime="20161229 21:56:34.469" starttime="20161229 21:56:34.468"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${urls}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:56:34.469" level="INFO">${url} = https://images.unsplash.com/photo-1471506480208-91b3a4cc78be?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=796&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
+<status status="PASS" endtime="20161229 21:56:34.469" starttime="20161229 21:56:34.469"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:34.472" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
+<status status="PASS" endtime="20161229 21:56:35.156" starttime="20161229 21:56:34.470"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:35.157" starttime="20161229 21:56:34.469"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:35.157" starttime="20161229 21:56:34.446"></status>
+</kw>
+<kw type="foritem" name="${count} = 8">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
+</arguments>
+<assign>
+<var>${attr}</var>
+</assign>
+<msg timestamp="20161229 21:56:35.181" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1475139450941-3b6464b2dde3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=673&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 576px;</msg>
+<status status="PASS" endtime="20161229 21:56:35.181" starttime="20161229 21:56:35.157"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${attr}</arg>
+<arg>"</arg>
+</arguments>
+<assign>
+<var>@{urls}</var>
+</assign>
+<msg timestamp="20161229 21:56:35.181" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1475139450941-3b6464b2dde3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=673&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 576px; ]</msg>
+<status status="PASS" endtime="20161229 21:56:35.181" starttime="20161229 21:56:35.181"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${urls}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:56:35.182" level="INFO">${url} = https://images.unsplash.com/photo-1475139450941-3b6464b2dde3?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=673&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
+<status status="PASS" endtime="20161229 21:56:35.182" starttime="20161229 21:56:35.181"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:35.186" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
+<status status="PASS" endtime="20161229 21:56:36.002" starttime="20161229 21:56:35.183"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:36.003" starttime="20161229 21:56:35.182"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:36.003" starttime="20161229 21:56:35.157"></status>
+</kw>
+<kw type="foritem" name="${count} = 9">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="gridSingle"]/div[${count}]/a@style</arg>
+</arguments>
+<assign>
+<var>${attr}</var>
+</assign>
+<msg timestamp="20161229 21:56:36.035" level="INFO">${attr} = background-image: url("https://images.unsplash.com/photo-1446628634513-ae07c7225559?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop="); width: 1026px; height: 684px;</msg>
+<status status="PASS" endtime="20161229 21:56:36.035" starttime="20161229 21:56:36.003"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${attr}</arg>
+<arg>"</arg>
+</arguments>
+<assign>
+<var>@{urls}</var>
+</assign>
+<msg timestamp="20161229 21:56:36.036" level="INFO">@{urls} = [ background-image: url( | https://images.unsplash.com/photo-1446628634513-ae07c7225559?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop= | ); width: 1026px; height: 684px; ]</msg>
+<status status="PASS" endtime="20161229 21:56:36.036" starttime="20161229 21:56:36.035"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${urls}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:56:36.036" level="INFO">${url} = https://images.unsplash.com/photo-1446628634513-ae07c7225559?dpr=2&amp;auto=compress,format&amp;fit=crop&amp;w=1199&amp;h=799&amp;q=80&amp;cs=tinysrgb&amp;crop=</msg>
+<status status="PASS" endtime="20161229 21:56:36.036" starttime="20161229 21:56:36.036"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:56:36.040" level="INFO">Starting new HTTPS connection (1): images.unsplash.com</msg>
+<status status="PASS" endtime="20161229 21:56:36.774" starttime="20161229 21:56:36.037"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:36.774" starttime="20161229 21:56:36.037"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:36.774" starttime="20161229 21:56:36.003"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:36.774" starttime="20161229 21:56:29.542"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:56:36.774" starttime="20161229 21:56:29.541"></status>
+</kw>
+<kw type="teardown" name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20161229 21:56:36.855" starttime="20161229 21:56:36.774"></status>
+</kw>
+<doc>To download images from [https://unsplash.com/?grid=single] in the first page</doc>
+<status status="PASS" endtime="20161229 21:56:36.855" critical="yes" starttime="20161229 21:56:19.733"></status>
+</test>
+<status status="PASS" endtime="20161229 21:56:36.857" starttime="20161229 21:56:19.394"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="DownloadImage" pass="1">DownloadImage</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20161229 21:56:19.608" level="ERROR">Error in file '/Users/ripzery/PycharmProjects/download_unsplash/config/config.robot': Importing test library 'RequestsLibrary' failed: ImportError: No module named RequestsLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /usr/local/bin
+  /Library/Python/2.7/site-packages/pushbullet_cli-0.7.5-py2.7.egg
+  /Library/Python/2.7/site-packages/keyrings.alt-1.1.1-py2.7.egg
+  /Library/Python/2.7/site-packages/keyring-9.3.1-py2.7.egg
+  /Library/Python/2.7/site-packages/click-6.6-py2.7.egg
+  /Library/Python/2.7/site-packages/pushbullet.py-0.10.0-py2.7.egg
+  /Library/Python/2.7/site-packages/websocket_client-0.37.0-py2.7.egg
+  /Library/Python/2.7/site-packages/python_magic-0.4.12-py2.7.egg
+  /Library/Python/2.7/site-packages/requests-2.11.1-py2.7.egg
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python27.zip
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-darwin
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac/lib-scriptpackages
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-old
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload
+  /Library/Python/2.7/site-packages
+  /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python
+  /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/PyObjC</msg>
+</errors>
+</robot>
