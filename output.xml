@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20161229 21:47:21.906" generator="Robot 3.0 (Python 2.7.10 on darwin)">
+<suite source="/Users/ripzery/PycharmProjects/download_unsplash/DownloadImage.robot" id="s1" name="DownloadImage">
+<test id="s1-t1" name="[2] Download Image From Soccersuck">
+<kw type="setup" name="Setup Soccersuck" library="DownloadImage">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${SOCCERSUCK_URL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20161229 21:47:22.253" level="INFO">Opening browser 'chrome' to base url 'http://www.soccersuck.com'</msg>
+<status status="PASS" endtime="20161229 21:47:35.584" starttime="20161229 21:47:22.253"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:35.585" starttime="20161229 21:47:22.252"></status>
+</kw>
+<kw name="Given Soccersuck Has Xcorner Section" library="Soccersuck">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="container"]/div[2]/div[32]/div[3]/div[1]/a</arg>
+</arguments>
+<status status="PASS" endtime="20161229 21:47:35.637" starttime="20161229 21:47:35.586"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>xpath=//*[@id="container"]/div[2]/div[32]/div[3]/div[1]/a@href</arg>
+</arguments>
+<assign>
+<var>${x_corner_url}</var>
+</assign>
+<msg timestamp="20161229 21:47:35.662" level="INFO">${x_corner_url} = http://www.soccersuck.com/boards/topic/1451145</msg>
+<status status="PASS" endtime="20161229 21:47:35.662" starttime="20161229 21:47:35.638"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${test_x_corner_url}</arg>
+<arg>${x_corner_url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:35.663" level="INFO">${test_x_corner_url} = http://www.soccersuck.com/boards/topic/1451145</msg>
+<status status="PASS" endtime="20161229 21:47:35.663" starttime="20161229 21:47:35.662"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:35.663" starttime="20161229 21:47:35.585"></status>
+</kw>
+<kw name="When Enter Xcorner Url '${test_xcorner_url}'" library="Soccersuck">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${xcorner_url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:35.665" level="INFO">Opening url 'http://www.soccersuck.com/boards/topic/1451145'</msg>
+<status status="PASS" endtime="20161229 21:47:51.502" starttime="20161229 21:47:35.664"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="Selenium2Library">
+<doc>Returns number of elements matching `xpath`</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img</arg>
+</arguments>
+<assign>
+<var>${total_image}</var>
+</assign>
+<msg timestamp="20161229 21:47:51.520" level="INFO">${total_image} = 13</msg>
+<status status="PASS" endtime="20161229 21:47:51.520" starttime="20161229 21:47:51.503"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${test_total_image}</arg>
+<arg>${total_image}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:51.521" level="INFO">${test_total_image} = 13</msg>
+<status status="PASS" endtime="20161229 21:47:51.521" starttime="20161229 21:47:51.520"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:51.521" starttime="20161229 21:47:35.664"></status>
+</kw>
+<kw name="And Create Folder From Window Title" library="DownloadImage">
+<kw name="Get Folder Name From Window Title" library="DownloadImage">
+<kw name="Get Window Titles" library="Selenium2Library">
+<doc>Returns and logs titles of all windows known to the browser.</doc>
+<assign>
+<var>@{title}</var>
+</assign>
+<msg timestamp="20161229 21:47:51.540" level="INFO">Altogether 1 item.
+1: น้องแยม ใสใส #CupE</msg>
+<msg timestamp="20161229 21:47:51.543" level="INFO">@{title} = [ น้องแยม ใสใส #CupE ]</msg>
+<status status="PASS" endtime="20161229 21:47:51.543" starttime="20161229 21:47:51.523"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${title}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20161229 21:47:51.544" level="INFO">${title} = น้องแยม ใสใส #CupE</msg>
+<status status="PASS" endtime="20161229 21:47:51.544" starttime="20161229 21:47:51.544"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${test_title}</arg>
+<arg>${title}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:51.545" level="INFO">${test_title} = น้องแยม ใสใส #CupE</msg>
+<status status="PASS" endtime="20161229 21:47:51.546" starttime="20161229 21:47:51.544"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:51.546" starttime="20161229 21:47:51.522"></status>
+</kw>
+<kw name="Create Folder" library="lib">
+<arguments>
+<arg>${test_title}</arg>
+</arguments>
+<status status="PASS" endtime="20161229 21:47:51.546" starttime="20161229 21:47:51.546"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:51.546" starttime="20161229 21:47:51.522"></status>
+</kw>
+<kw name="Then Download All Images From The Poster Total '${test_total_image}'" library="Soccersuck">
+<kw type="for" name="${count} IN RANGE [ 1 | ${total_image} ]">
+<kw type="foritem" name="${count} = 1">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:51.571" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781820_1139701056135324_6959506135971546362_n.jpg?oh=55f84cae4aedb8a03e68dd567a9174a7&amp;oe=58DE1CAA</msg>
+<status status="PASS" endtime="20161229 21:47:51.571" starttime="20161229 21:47:51.548"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:51.571" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781820_1139701056135324_6959506135971546362_n.jpg?oh=55f84cae4aedb8a03e68dd567a9174a7&amp;oe=58DE1CAA</msg>
+<status status="PASS" endtime="20161229 21:47:51.572" starttime="20161229 21:47:51.571"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:51.600" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:52.227" starttime="20161229 21:47:51.572"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:52.227" starttime="20161229 21:47:51.572"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:52.227" starttime="20161229 21:47:51.547"></status>
+</kw>
+<kw type="foritem" name="${count} = 2">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:52.250" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15672797_1139701042801992_5290999065022199499_n.jpg?oh=f5709eee1fe55dad70ccd2c2464d46b9&amp;oe=58DCBC24</msg>
+<status status="PASS" endtime="20161229 21:47:52.250" starttime="20161229 21:47:52.228"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:52.251" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15672797_1139701042801992_5290999065022199499_n.jpg?oh=f5709eee1fe55dad70ccd2c2464d46b9&amp;oe=58DCBC24</msg>
+<status status="PASS" endtime="20161229 21:47:52.251" starttime="20161229 21:47:52.250"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:52.254" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:52.801" starttime="20161229 21:47:52.251"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:52.801" starttime="20161229 21:47:52.251"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:52.801" starttime="20161229 21:47:52.228"></status>
+</kw>
+<kw type="foritem" name="${count} = 3">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:52.826" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781674_1139701112801985_1711962196799026573_n.jpg?oh=d4f124a9c2d294267e7b022670524f2d&amp;oe=5922024B</msg>
+<status status="PASS" endtime="20161229 21:47:52.826" starttime="20161229 21:47:52.802"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:52.826" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15781674_1139701112801985_1711962196799026573_n.jpg?oh=d4f124a9c2d294267e7b022670524f2d&amp;oe=5922024B</msg>
+<status status="PASS" endtime="20161229 21:47:52.826" starttime="20161229 21:47:52.826"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:52.829" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:53.382" starttime="20161229 21:47:52.827"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:53.382" starttime="20161229 21:47:52.827"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:53.382" starttime="20161229 21:47:52.801"></status>
+</kw>
+<kw type="foritem" name="${count} = 4">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:53.404" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15724781_1139701046135325_238524977859635656_o.jpg?oh=a3a20c2011c441ee5f6cc58bd22e0f32&amp;oe=58E58D34</msg>
+<status status="PASS" endtime="20161229 21:47:53.404" starttime="20161229 21:47:53.382"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:53.405" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15724781_1139701046135325_238524977859635656_o.jpg?oh=a3a20c2011c441ee5f6cc58bd22e0f32&amp;oe=58E58D34</msg>
+<status status="PASS" endtime="20161229 21:47:53.405" starttime="20161229 21:47:53.404"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:53.408" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:53.969" starttime="20161229 21:47:53.405"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:53.969" starttime="20161229 21:47:53.405"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:53.969" starttime="20161229 21:47:53.382"></status>
+</kw>
+<kw type="foritem" name="${count} = 5">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:54.096" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15723315_1139701129468650_6147904040146052263_o.jpg?oh=3a7517401db6f03e50e1115b4c8dcacb&amp;oe=58D7C04F</msg>
+<status status="PASS" endtime="20161229 21:47:54.096" starttime="20161229 21:47:53.970"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:54.103" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15723315_1139701129468650_6147904040146052263_o.jpg?oh=3a7517401db6f03e50e1115b4c8dcacb&amp;oe=58D7C04F</msg>
+<status status="PASS" endtime="20161229 21:47:54.103" starttime="20161229 21:47:54.098"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:54.109" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:54.750" starttime="20161229 21:47:54.104"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:54.750" starttime="20161229 21:47:54.103"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:54.750" starttime="20161229 21:47:53.970"></status>
+</kw>
+<kw type="foritem" name="${count} = 6">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:54.775" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15731845_1139701086135321_5570488336584537628_o.jpg?oh=72ee80b971ca70ef2b45133b95d8c5f7&amp;oe=58D85FE3</msg>
+<status status="PASS" endtime="20161229 21:47:54.775" starttime="20161229 21:47:54.751"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:54.776" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t31.0-8/s960x960/15731845_1139701086135321_5570488336584537628_o.jpg?oh=72ee80b971ca70ef2b45133b95d8c5f7&amp;oe=58D85FE3</msg>
+<status status="PASS" endtime="20161229 21:47:54.776" starttime="20161229 21:47:54.776"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:54.779" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:55.332" starttime="20161229 21:47:54.777"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:55.332" starttime="20161229 21:47:54.776"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:55.332" starttime="20161229 21:47:54.750"></status>
+</kw>
+<kw type="foritem" name="${count} = 7">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:55.358" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15726324_1139701199468643_2607891704116630740_n.jpg?oh=b8a361140ccf107171fcf42a9b2bece7&amp;oe=58E62A82</msg>
+<status status="PASS" endtime="20161229 21:47:55.358" starttime="20161229 21:47:55.332"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:55.359" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15726324_1139701199468643_2607891704116630740_n.jpg?oh=b8a361140ccf107171fcf42a9b2bece7&amp;oe=58E62A82</msg>
+<status status="PASS" endtime="20161229 21:47:55.359" starttime="20161229 21:47:55.358"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:55.362" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:55.923" starttime="20161229 21:47:55.359"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:55.923" starttime="20161229 21:47:55.359"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:55.923" starttime="20161229 21:47:55.332"></status>
+</kw>
+<kw type="foritem" name="${count} = 8">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:55.951" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15698068_1139701279468635_2905965394058499535_n.jpg?oh=b1822c8643ea8cc34de800833f9212f1&amp;oe=58D87ED3</msg>
+<status status="PASS" endtime="20161229 21:47:55.951" starttime="20161229 21:47:55.923"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:55.951" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15698068_1139701279468635_2905965394058499535_n.jpg?oh=b1822c8643ea8cc34de800833f9212f1&amp;oe=58D87ED3</msg>
+<status status="PASS" endtime="20161229 21:47:55.952" starttime="20161229 21:47:55.951"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:55.957" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:56.522" starttime="20161229 21:47:55.953"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:56.522" starttime="20161229 21:47:55.952"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:56.522" starttime="20161229 21:47:55.923"></status>
+</kw>
+<kw type="foritem" name="${count} = 9">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:56.545" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15740834_1139701226135307_2118676158707190745_n.jpg?oh=5b31a36d42f20c243dd3880037ded400&amp;oe=59225BEF</msg>
+<status status="PASS" endtime="20161229 21:47:56.545" starttime="20161229 21:47:56.523"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:56.546" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15740834_1139701226135307_2118676158707190745_n.jpg?oh=5b31a36d42f20c243dd3880037ded400&amp;oe=59225BEF</msg>
+<status status="PASS" endtime="20161229 21:47:56.546" starttime="20161229 21:47:56.546"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:56.549" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:57.087" starttime="20161229 21:47:56.547"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:57.087" starttime="20161229 21:47:56.546"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:57.087" starttime="20161229 21:47:56.522"></status>
+</kw>
+<kw type="foritem" name="${count} = 10">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:57.109" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15697869_1139701432801953_6221146006055900706_n.jpg?oh=f85f9ab0f5f762e02fff0b666649eb08&amp;oe=58E38F37</msg>
+<status status="PASS" endtime="20161229 21:47:57.109" starttime="20161229 21:47:57.087"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:57.109" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15697869_1139701432801953_6221146006055900706_n.jpg?oh=f85f9ab0f5f762e02fff0b666649eb08&amp;oe=58E38F37</msg>
+<status status="PASS" endtime="20161229 21:47:57.110" starttime="20161229 21:47:57.109"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:57.112" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:57.665" starttime="20161229 21:47:57.110"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:57.665" starttime="20161229 21:47:57.110"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:57.665" starttime="20161229 21:47:57.087"></status>
+</kw>
+<kw type="foritem" name="${count} = 11">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:57.688" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747870_1139701366135293_853292563209482962_n.jpg?oh=2aa769babb097139dc39e90675d37b50&amp;oe=58DC18B7</msg>
+<status status="PASS" endtime="20161229 21:47:57.688" starttime="20161229 21:47:57.666"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:57.688" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747870_1139701366135293_853292563209482962_n.jpg?oh=2aa769babb097139dc39e90675d37b50&amp;oe=58DC18B7</msg>
+<status status="PASS" endtime="20161229 21:47:57.688" starttime="20161229 21:47:57.688"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:57.691" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:58.224" starttime="20161229 21:47:57.689"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:58.224" starttime="20161229 21:47:57.688"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:58.224" starttime="20161229 21:47:57.665"></status>
+</kw>
+<kw type="foritem" name="${count} = 12">
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Return value of element attribute.</doc>
+<arguments>
+<arg>//*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20161229 21:47:58.253" level="INFO">${url} = https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747758_1139701422801954_1847459478394787443_n.jpg?oh=e3fa918427fd781e3e3e3812e167887f&amp;oe=58E97D0F</msg>
+<status status="PASS" endtime="20161229 21:47:58.253" starttime="20161229 21:47:58.224"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:58.254" level="INFO">https://scontent.fbkk2-1.fna.fbcdn.net/v/t1.0-9/15747758_1139701422801954_1847459478394787443_n.jpg?oh=e3fa918427fd781e3e3e3812e167887f&amp;oe=58E97D0F</msg>
+<status status="PASS" endtime="20161229 21:47:58.254" starttime="20161229 21:47:58.253"></status>
+</kw>
+<kw name="Download Image '${count}' From '${url}' Into Folder '${test_title}'" library="DownloadImage">
+<kw name="Download Img" library="lib">
+<arguments>
+<arg>${folder}</arg>
+<arg>${url}</arg>
+<arg>${number}</arg>
+</arguments>
+<msg timestamp="20161229 21:47:58.257" level="INFO">Starting new HTTPS connection (1): scontent.fbkk2-1.fna.fbcdn.net</msg>
+<status status="PASS" endtime="20161229 21:47:58.816" starttime="20161229 21:47:58.255"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:58.816" starttime="20161229 21:47:58.254"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:58.816" starttime="20161229 21:47:58.224"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:58.816" starttime="20161229 21:47:51.547"></status>
+</kw>
+<status status="PASS" endtime="20161229 21:47:58.817" starttime="20161229 21:47:51.547"></status>
+</kw>
+<kw type="teardown" name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20161229 21:47:58.958" starttime="20161229 21:47:58.818"></status>
+</kw>
+<doc>To download images from [http://www.soccersuck.com] in xcorner</doc>
+<status status="PASS" endtime="20161229 21:47:58.958" critical="yes" starttime="20161229 21:47:22.251"></status>
+</test>
+<status status="PASS" endtime="20161229 21:47:58.960" starttime="20161229 21:47:21.909"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="DownloadImage" pass="1">DownloadImage</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20161229 21:47:22.108" level="ERROR">Error in file '/Users/ripzery/PycharmProjects/download_unsplash/config/config.robot': Importing test library 'RequestsLibrary' failed: ImportError: No module named RequestsLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /usr/local/bin
+  /Library/Python/2.7/site-packages/pushbullet_cli-0.7.5-py2.7.egg
+  /Library/Python/2.7/site-packages/keyrings.alt-1.1.1-py2.7.egg
+  /Library/Python/2.7/site-packages/keyring-9.3.1-py2.7.egg
+  /Library/Python/2.7/site-packages/click-6.6-py2.7.egg
+  /Library/Python/2.7/site-packages/pushbullet.py-0.10.0-py2.7.egg
+  /Library/Python/2.7/site-packages/websocket_client-0.37.0-py2.7.egg
+  /Library/Python/2.7/site-packages/python_magic-0.4.12-py2.7.egg
+  /Library/Python/2.7/site-packages/requests-2.11.1-py2.7.egg
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python27.zip
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-darwin
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac/lib-scriptpackages
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-old
+  /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload
+  /Library/Python/2.7/site-packages
+  /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python
+  /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/PyObjC</msg>
+</errors>
+</robot>
