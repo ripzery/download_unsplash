@@ -1,0 +1,21 @@
+*** Settings ***
+Library           Selenium2Library
+Library           RequestsLibrary
+Library           Collections
+Library           String
+Library           lib.py
+
+*** Test Cases ***
+Download Image From Unsplash
+    [Tags]    DEBUG
+    Open Browser     https://unsplash.com/?grid=single     chrome
+    ${total_image}=     Get Matching Xpath Count    //*[@id="gridSingle"]/div/a
+    :FOR    ${count}    IN RANGE    1    ${total_image}
+    \    ${attr}=       Get Element Attribute     //*[@id="gridSingle"]/div[${count}]/a@style
+    \    @{urls}=       Split String     ${attr}     "
+    \    ${url}=     Get From List    ${urls}     1
+    \    Download Img    ${url}     ${count}
+    [Teardown]  Close All Browsers
+
+*** Keywords ***
+Provided precondition
