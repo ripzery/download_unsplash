@@ -17,5 +17,17 @@ Download Image From Unsplash
     \    Download Img    ${url}     ${count}
     [Teardown]  Close All Browsers
 
+Download Image From Soccersuck
+    Open Browser        http://www.soccersuck.com     chrome
+    Wait Until Element Is Visible      xpath=//*[@id="container"]/div[2]/div[32]/div[3]/div[1]/a/img
+    Click Element       xpath=//*[@id="container"]/div[2]/div[32]/div[3]/div[1]/a/img
+    ${total_image}=     Get Matching Xpath Count    //*[@id="container"]/div[6]/div[2]/div[2]/img
+    log     ${total_image}
+    :FOR    ${count}    IN RANGE    1    ${total_image}
+    \    ${url}=       Get Element Attribute     //*[@id="container"]/div[6]/div[2]/div[2]/img[${count}]@src
+    \    log     ${url}
+    \    Download Img    ${url}     ${count}
+    [Teardown]  Close All Browsers
+
 *** Keywords ***
 Provided precondition
