@@ -15,7 +15,7 @@ Get Folder Name From Window Title
     Set Test Variable     ${test_title}      ${title}
 
 Setup Unsplash
-    Open Browser        ${UNSPLASH_URL}     chrome
+    Open Browser        ${UNSPLASH_URL}      ${BROWSER}
 
 Setup Soccersuck
-    Open Browser        ${SOCCERSUCK_URL}     chrome
+    Open Browser        ${SOCCERSUCK_URL}    ${BROWSER}

@@ -1,0 +1,7 @@
+ghostdriver.log
+*.html
+*.xml
+*.png
+*.jpg
+.DS_STORE
+.idea/*
