@@ -4,4 +4,4 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - pybot -t "[2]*" DownloadImage.robot
+  - pybot -t "[1]*" DownloadImage.robot
