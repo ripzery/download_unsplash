@@ -1,6 +1,5 @@
 *** Settings ***
 Library           Selenium2Library
-Library           RequestsLibrary
 Library           Collections
 Library           String
 Library           ../lib.py
