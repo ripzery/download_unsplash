@@ -5,6 +5,9 @@ Library           String
 Library           ../lib.py
 
 *** Variables ***
-${UNSPLASH_URL}     https://unsplash.com/?grid=single
+${UNSPLASH_URL}     https://unsplash.com/new?grid=multi
 ${SOCCERSUCK_URL}   http://www.soccersuck.com
-${BROWSER}          phantomjs
+${BROWSER}          chrome
+${UNSPLASH_SCROLL_TIMES}     10
+${UNSPLASH_IMAGE_WIDTH}      1920
+${UNSPLASH_IMAGE_HEIGHT}     1080

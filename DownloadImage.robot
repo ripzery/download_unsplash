@@ -15,7 +15,7 @@ Test Teardown  Close All Browsers
 [2] Download Image From Soccersuck Xcorner
     [Documentation]    To download images from [${SOCCERSUCK_URL}] in xcorner
     [Setup]            Setup Soccersuck
-#    Given Soccersuck Has Xcorner Section
-    When Enter Xcorner Url 'http://www.soccersuck.com/boards/topic/1419814'
+    Given Soccersuck Has Xcorner Section
+    When Enter Xcorner Url '${test_x_corner_url}'
     And Create Folder From Window Title
     Then Download All Images From The Poster Total '${test_total_image}'

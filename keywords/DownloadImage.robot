@@ -18,4 +18,7 @@ Setup Unsplash
     Open Browser        ${UNSPLASH_URL}      ${BROWSER}
 
 Setup Soccersuck
+    Set Selenium Implicit Wait     1 seconds
+    Set Selenium Speed             0 seconds
     Open Browser        ${SOCCERSUCK_URL}    ${BROWSER}
+    Set Selenium Implicit Wait     15 seconds
