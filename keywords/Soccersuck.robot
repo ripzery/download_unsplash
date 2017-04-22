@@ -8,7 +8,7 @@ Soccersuck has xcorner section
     Set Test Variable  ${test_x_corner_url}     ${x_corner_url}
 
 Enter xcorner url '${xcorner_url}' Or '${custom_url}'
-    ${url}=     Set Variable If     '${custom_url}'!='${None}'      ${custom_url}
+    ${url}=     Set Variable If     '${custom_url}'!='None'      ${custom_url}
     ${url}=     Set Variable If     '${custom_url}'=='${None}'      ${xcorner_url}
     Log To Console        Loading image url from url ${url}
     Go To       ${url}
