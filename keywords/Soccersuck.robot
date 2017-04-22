@@ -9,6 +9,7 @@ Soccersuck has xcorner section
 
 Enter xcorner url '${xcorner_url}'
     Go To  ${xcorner_url}
+    Log   ${xcorner_url}
     @{list_images}=       Get Webelements      //div[@id="container"]/div[@class="post_panel"][1]/div[@class="post_panel_td post_panel_td_right"]/div[@class="post_desc"]//img
     ${total_image}=       Get Length           ${list_images}
     Set Test Variable   ${test_total_image}     ${total_image}
