@@ -1,5 +1,7 @@
 *** Settings ***
 Resource      ../config/config.robot
+Library       Collections
+Library       OperatingSystem
 
 *** Keywords ***
 Create Folder From Window Title

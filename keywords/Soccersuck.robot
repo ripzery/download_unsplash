@@ -18,7 +18,6 @@ Download all images from the poster total '${total_image}'
     :FOR    ${count}    IN RANGE    0    ${total_image}
     \    ${image}=     Get From List     ${test_list_images}     ${count}
     \    ${url}=       Set Variable      ${image.get_attribute('src')}
-    \    ${gif_array}=     Get Regexp Matches     ${url}     .gif
-    \    ${total_gif}=     Get Length             ${gif_array}
-    \    Continue For Loop If      '${total_gif}'!='0'
+    \    ${path}     ${extension}=     Split Extension     ${url}
+    \    Continue For Loop If      '${extension}'=='gif'
     \    Download Image '${count}' From '${url}' Into Folder '${test_title}'
