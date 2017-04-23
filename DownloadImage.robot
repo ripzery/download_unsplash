@@ -5,7 +5,7 @@ Resource      ./keywords/Unsplash.robot
 Test Teardown  Close All Browsers
 
 *** Variables ***
-${custom_url}
+${custom_url}      custom_url
 
 *** Test Cases ***
 [1] Download Image From Unsplash First Page
